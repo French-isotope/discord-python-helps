@@ -5,6 +5,72 @@ from tkinter import IntVar
 
 # Project is inspired from https://www.youtube.com/watch?v=je1LcqXQAhU
 
+database = {
+    "sidedish" : {
+        "position":{
+            "x":10,
+            "y":100
+        },
+        "elements" : {
+            "Fries":{
+               "price":"50",
+               "quantity":"0"
+            },
+                "Salad": {
+                    "price": "50",
+                    "quantity":"0"
+                },
+                "Mashed Potato":{
+                    "price": "50",
+                    "quantity": "0"
+                }
+        }
+    },
+
+    "pizza": {
+        "position": {
+            "x": 10,
+            "y": 100
+        },
+        "elements": {
+            "Cheese Pizza": {
+                "price": "50",
+                "quantity": "0"
+            },
+            "Pepperoni Pizza": {
+                "price": "50",
+                "quantity": "0"
+            },
+            "Hawaiian Pizza": {
+               "price": "50",
+                "quantity": "0"
+            }
+        }
+    },
+
+    "drinks": {
+        "position": {
+            "x": 10,
+            "y": 100
+        },
+        "elements": {
+            "Tea": {
+                "price": "50",
+                "quantity": "0"
+            },
+            "Coffee": {
+                "price": "50",
+                "quantity": "0"
+            },
+            "Cola": {
+                "price": "50",
+                "quantity": "0"
+            }
+        }
+    }
+}
+
+
 
 window2 = Tk()
 window2.title("Eazy Peazy")
