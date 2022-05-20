@@ -14,16 +14,16 @@ database = {
         "elements" : {
             "Fries":{
                "price":"50",
-               "quantity":"0"
+               "quantity":tkinter.IntVar
             },
-                "Salad": {
-                    "price": "50",
-                    "quantity":"0"
-                },
-                "Mashed Potato":{
-                    "price": "50",
-                    "quantity": "0"
-                }
+            "Salad":{
+                "price": "50",
+                "quantity":tkinter.IntVar
+            },
+            "Mashed Potato":{
+                "price": "50",
+                "quantity":tkinter.IntVar
+            }
         }
     },
 
@@ -35,15 +35,15 @@ database = {
         "elements": {
             "Cheese Pizza": {
                 "price": "50",
-                "quantity": "0"
+                "quantity":tkinter.IntVar
             },
             "Pepperoni Pizza": {
                 "price": "50",
-                "quantity": "0"
+                "quantity":tkinter.IntVar
             },
             "Hawaiian Pizza": {
                "price": "50",
-                "quantity": "0"
+                "quantity":tkinter.IntVar
             }
         }
     },
@@ -56,20 +56,33 @@ database = {
         "elements": {
             "Tea": {
                 "price": "50",
-                "quantity": "0"
+                "quantity":tkinter.IntVar
             },
             "Coffee": {
                 "price": "50",
-                "quantity": "0"
+                "quantity":tkinter.IntVar
             },
             "Cola": {
                 "price": "50",
-                "quantity": "0"
+                "quantity":tkinter.IntVar
             }
         }
     }
 }
 
+
+def reset_ds(ds):
+    for category in ds:
+        for element in ds[category]["elements"]:
+            print(f'test {ds[category]["elements"][element]}')
+#            element["quantity"].set("0")
+
+
+
+database2 = reset_ds(database)
+
+
+print(database2)
 
 
 window2 = Tk()
