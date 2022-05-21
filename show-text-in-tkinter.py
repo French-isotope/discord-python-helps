@@ -14,15 +14,15 @@ database = {
         "elements" : {
             "Fries":{
                "price":"50",
-               "quantity":tkinter.IntVar
+               "quantity":IntVar()
             },
             "Salad":{
                 "price": "50",
-                "quantity":tkinter.IntVar
+                "quantity":IntVar()
             },
             "Mashed Potato":{
                 "price": "50",
-                "quantity":tkinter.IntVar
+                "quantity":IntVar()
             }
         }
     },
@@ -74,7 +74,9 @@ database = {
 def reset_ds(ds):
     for category in ds:
         for element in ds[category]["elements"]:
-            print(f'test {ds[category]["elements"][element]}')
+            print(f'test {ds[category]["elements"][element]["quantity"]}')
+            ds[category]["elements"][element]["quantity"].set(0)
+            print(f'test {ds[category]["elements"][element]["quantity"]}')
 #            element["quantity"].set("0")
 
 
