@@ -167,7 +167,7 @@ for category in database:
     lblspace.grid(row=0, column=0)
     for id, element in enumerate(database[category]["elements"]):
         id += 1
-        Checkbutton(database[category]["position"]["f"], text=f"{element}\t\t P50.00", variable=database[category]["elements"][element]["quantity"], onvalue=1, offvalue=0,
+        Checkbutton(database[category]["position"]["f"], text=f"{element}\t\t P50.00", variable=database[category]["elements"][element]["quantity"], onvalue=1, offvalue=17,
                     font=(font, size, grease)).grid(row=id, column=0, sticky=W)
 
     lblspace = Label(database[category]["position"]["f"], text="\n\n\n\n\n\n\n\n\n")
