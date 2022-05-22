@@ -47,18 +47,21 @@ while t<=tmax:
 
 figure, (axis1, axis2) = plt.subplots(2)
 
+figure.suptitle("test")
 # height vs time
 axis1.plot(time, height)
 axis1.grid()
-#axis1.title('height vs time')
+axis1.set_title('height vs time')
 #axis1.xlabel('time')
 #axis1.ylabel('height')
 
 # velocity vs time
 axis2.plot(time, velocity)
 axis2.grid()
-#axis2.title('velocity vs time')
+axis2.set_title('velocity vs time')
 #axis2.xlabel('time')
 #axis2.ylabel('velocity')
+
+figure.tight_layout() # better separate each plots
 
 plt.show()

@@ -44,7 +44,7 @@ f3bot.pack(side=BOTTOM)
 database = {
     "sidedish" : {
         "font":{
-            'font':'arial',
+            'font':'greekc',
             'size':18,
             'weight':'bold'},
         "position":{
