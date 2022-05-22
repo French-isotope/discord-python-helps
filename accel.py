@@ -45,20 +45,20 @@ while t<=tmax:
     time.append(t)
 
 
-figure, axis = plt.subplots(1, 2)
+figure, (axis1, axis2) = plt.subplots(2)
 
 # height vs time
-axis[0,0].plot(time, height)
-axis[0,0].grid()
-axis[0,0].title('height vs time')
-axis[0,0].xlabel('time')
-axis[0,0].ylabel('height')
+axis1.plot(time, height)
+axis1.grid()
+#axis1.title('height vs time')
+#axis1.xlabel('time')
+#axis1.ylabel('height')
 
 # velocity vs time
-axis[0,1].plot(time, velocity)
-axis[0,1].grid()
-axis[0,1].title('velocity vs time')
-axis[0,1].xlabel('time')
-axis[0,1].ylabel('velocity')
+axis2.plot(time, velocity)
+axis2.grid()
+#axis2.title('velocity vs time')
+#axis2.xlabel('time')
+#axis2.ylabel('velocity')
 
 plt.show()
