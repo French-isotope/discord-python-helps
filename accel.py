@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 # Init vars
 h = 3000 # meters
 v = 0 # m/s
-g = -9.81 # m/s^2
+g = 9.81 # m/s^2
 t = 0 # sec
 tmax = 30 # sec
 dt = 1 # sec
@@ -14,12 +14,12 @@ velocity = []
 time = []
 
 height.append(h)
-velocity.append(v)
+velocity.append(-v)
 time.append(t)
 
 
 def derivs(v, g):
-    dhdt = v
+    dhdt = -v
     dvdt = g
 
     return dhdt, dvdt
@@ -50,6 +50,8 @@ figure.suptitle("test")
 axis1.plot(time, height)
 axis1.grid()
 axis1.set_title('height vs time')
+# .set(xlabel='x-label', ylabel='y-label')
+axis1.set(xlabel='x-label', ylabel='y-label')
 #axis1.xlabel('time')
 #axis1.ylabel('height')
 
@@ -57,8 +59,11 @@ axis1.set_title('height vs time')
 axis2.plot(time, velocity)
 axis2.grid()
 axis2.set_title('velocity vs time')
+axis2.set(xlabel='x-label', ylabel='y-label')
+
 #axis2.xlabel('time')
 #axis2.ylabel('velocity')
+
 
 figure.tight_layout() # better separate each plots
 
