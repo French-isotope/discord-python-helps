@@ -176,4 +176,13 @@ for category in database:
 chkout = Button(f3bot, text="Check out", command=checkout)
 chkout.pack()
 
+
+
+def task():
+    print(database["sidedish"]["elements"]["Fries"]["quantity"].get())
+    window2.after(10000, task)  # reschedule event in 2 seconds
+
+window2.after(2000, task)
+
 window2.mainloop()
+

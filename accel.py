@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # Init vars
 h = 3000 # meters
 v = 0 # m/s
-g = -9.81 # m/s^2
+g = 9.81 # m/s^2
 t = 0 # sec
 tmax = 30 # sec
 dt = 1 # sec
