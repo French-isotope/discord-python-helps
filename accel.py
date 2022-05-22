@@ -1,5 +1,3 @@
-import numpy as np
-#%matplotlib inline
 import matplotlib.pyplot as plt
 
 # Init vars
