@@ -44,7 +44,7 @@ f3bot.pack(side=BOTTOM)
 database = {
     "sidedish" : {
         "font":{
-            'font':'greekc',
+            'font':'arial',
             'size':18,
             'weight':'bold'},
         "position":{
@@ -63,6 +63,18 @@ database = {
                 "quantity":tkinter.IntVar(value=0)
             },
             "Mashed Potato":{
+                "price": "50",
+                "quantity":tkinter.IntVar(value=0)
+            },
+            "Not Mashed Potato1":{
+                "price": "50",
+                "quantity":tkinter.IntVar(value=0)
+            },
+            "Not Mashed Potato2":{
+                "price": "50",
+                "quantity":tkinter.IntVar(value=0)
+            },
+            "Not Mashed Potato3":{
                 "price": "50",
                 "quantity":tkinter.IntVar(value=0)
             }
@@ -96,7 +108,7 @@ database = {
     },
     "drinks": {
         "font": {
-            'font': 'Comic Sans MS',
+            'font': 'arial',
             'size': 18,
             'weight': 'bold'},
         "position": {
