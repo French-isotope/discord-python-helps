@@ -45,7 +45,7 @@ database = {
     "sidedish" : {
         "font":{
             'font':'arial',
-            'size':18,
+            'size':12,
             'weight':'bold'},
         "position":{
             "x":10,
@@ -83,7 +83,7 @@ database = {
     "pizza": {
         "font": {
             'font': 'arial',
-            'size': 18,
+            'size': 12,
             'weight': 'bold'},
         "position": {
             "x": 10,
@@ -109,7 +109,7 @@ database = {
     "drinks": {
         "font": {
             'font': 'arial',
-            'size': 18,
+            'size': 12,
             'weight': 'bold'},
         "position": {
             "x": 10,
@@ -167,8 +167,11 @@ for category in database:
     lblspace.grid(row=0, column=0)
     for id, element in enumerate(database[category]["elements"]):
         id += 1
-        Checkbutton(database[category]["position"]["f"], text=f"{element}\t\t P50.00", variable=database[category]["elements"][element]["quantity"], onvalue=1, offvalue=17,
+        Checkbutton(database[category]["position"]["f"], text=f"{element}\t\t P50.00", variable=database[category]["elements"][element]["quantity"], onvalue=1, offvalue=0,
                     font=(font, size, grease)).grid(row=id, column=0, sticky=W)
+        Entry(database[category]["position"]["f"],
+                    font=(font, size, grease)).grid(row=id, column=1)
+
 
     lblspace = Label(database[category]["position"]["f"], text="\n\n\n\n\n\n\n\n\n")
     lblspace.grid(row=database[category]["position"]["row"], column=0)
@@ -185,4 +188,3 @@ def task():
 window2.after(2000, task)
 
 window2.mainloop()
-
