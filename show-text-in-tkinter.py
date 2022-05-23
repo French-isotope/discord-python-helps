@@ -169,8 +169,7 @@ for category in database:
         id += 1
         Checkbutton(database[category]["position"]["f"], text=f"{element}\t\t P50.00", variable=database[category]["elements"][element]["quantity"], onvalue=1, offvalue=0,
                     font=(font, size, grease)).grid(row=id, column=0, sticky=W)
-        Entry(database[category]["position"]["f"],
-                    font=(font, size, grease)).grid(row=id, column=1)
+        Entry(database[category]["position"]["f"], font=(font, size, grease), width=4).grid(row=id, column=1)
 
 
     lblspace = Label(database[category]["position"]["f"], text="\n\n\n\n\n\n\n\n\n")
