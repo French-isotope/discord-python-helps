@@ -44,8 +44,6 @@ def rest_time():
         title_label.config(text="Break", fg=PINK)
     # If it's the 2nd/4th/6th rep
 
-
-
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
     count_min = math.floor(count / 60)
