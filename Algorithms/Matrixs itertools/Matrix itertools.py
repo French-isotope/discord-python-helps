@@ -1,5 +1,7 @@
 import itertools as it
 
+# https://fr.wikipedia.org/wiki/Produit_cart%C3%A9sien
+
 str1 = ['000', '001']
 str2 = ['002', '003']
 
