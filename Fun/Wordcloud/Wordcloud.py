@@ -9,4 +9,3 @@ wc = WordCloud(stopwords=STOPWORDS).generate(text)
 plt.imshow(wc)
 plt.axis("off")
 plt.show()
-
