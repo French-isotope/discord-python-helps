@@ -35,5 +35,3 @@ def clean_text(rgx_list, text):
         new_text = re.sub(rgx_match, '', new_text)
     return new_text
 
-re.compile(f'([]+(\S*)({arg})+)').findall(gdp['Zone'])
-
