@@ -10,6 +10,7 @@ with open(keys_file,'r',encoding = 'utf-8') as f1:
 with open(values_file,'r',encoding = 'utf-8') as f2:
     value_ref = json.load(f2)
 
+
 """
 def nested_dict_pairs_iterator(dict_obj):
     ''' This function accepts a nested dictionary as argument
@@ -26,6 +27,8 @@ def nested_dict_pairs_iterator(dict_obj):
             # If value is not dict type then yield the value
             yield (key, value)
 
+"""
+
 
 def nested_dict_pairs_iterator(dict_obj):
     ''' This function accepts a nested dictionary as argument
@@ -41,14 +44,17 @@ def nested_dict_pairs_iterator(dict_obj):
         else:
             # If value is not dict type then yield the value
             yield (key, value)
-
-"""
 
 
 # Get all key-value pairs of a nested dictionary as list
 all_pairs = list(nested_dict_pairs_iterator(key_ref))
 for pair in all_pairs:
     print(pair)
+
+
+with open('test.json','w',encoding = 'utf-8') as f1:
+    output_prettified = json.dumps(all_pairs, indent=4, sort_keys=True)
+    f1.write(output_prettified)
 
 
 #print(key_ref)
