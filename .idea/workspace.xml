@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e9f47c5-84c4-4bfb-aacc-157d7853d568" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Plotting/matplotlib/3D cube/3d_cube.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plotting/matplotlib/3D cube/3d_cube.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Databases/MySQL/first_get_and_connect/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
