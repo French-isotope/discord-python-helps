@@ -1,6 +1,8 @@
 import pandas as pd
 import re
 
+pd.set_option('display.max_rows', None)
+
 gdp = pd.read_csv('gdp_2018_2020.csv')
 
 gdp = gdp[['Unnamed: 0','2018 [2018].1','2019 [2019].1','2020 [2020].1']]
@@ -48,4 +50,6 @@ gdp['Zone'] = gdp['Zone'].str.replace(" \[\d{1,3}\]","", regex=True)
 #print(replaced)
 
 print(gdp)
+
+print(gdp.sort_values('Evol_gdp', ascending=False))
 
