@@ -35,3 +35,17 @@ def clean_text(rgx_list, text):
         new_text = re.sub(rgx_match, '', new_text)
     return new_text
 
+print(gdp['Zone'])
+
+gdp['Zone'].str.replace(" \[\d{1,3}\]","")
+
+print(gdp['Zone'].str.replace(" \[\d{1,3}\]","", regex=True))
+
+gdp['Zone'] = gdp['Zone'].str.replace(" \[\d{1,3}\]","", regex=True)
+
+#print(clean_text([' \[\d{1,3}\]'], str(gdp['Zone'])))
+#replaced = re.sub(' \[\d{1,3}\]', '', str(gdp['Zone']))
+#print(replaced)
+
+print(gdp)
+
