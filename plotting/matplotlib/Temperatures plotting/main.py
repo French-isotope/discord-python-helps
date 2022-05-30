@@ -5,8 +5,12 @@ import matplotlib as mpl
 from datetime import datetime
 import seaborn as sns
 
+df = pd.read_csv("datas.csv", sep=";")
+df.columns = df.columns.str.replace(" ", "")
 
 data_24h = df[df["Date"] == df.iloc[-1]["Date"]]
+print(data_24h)
+
 start_time = ":".join(data_24h.iloc[0]["Time"].split(":")[:2]).replace(" ", "")
 end_time = ":".join(data_24h.iloc[-1]["Time"].split(":")[:2]).replace(" ", "")
 plt.figure(figsize=(8,4), dpi=150)
@@ -45,4 +49,5 @@ plt.legend()
 # plt.fill_bewtween(data_24h["Time"], 0, data_24h["Temp"], alpha=.3)
 plt.savefig("temperature.png", dpi=300)
 plt.show()
+
 
