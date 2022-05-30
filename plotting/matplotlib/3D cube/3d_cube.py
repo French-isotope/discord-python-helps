@@ -9,7 +9,7 @@ axes = [3, 3, 3]
 # Create Data
 data = np.ones(axes, dtype=bool)
 
-# Controll Tranperency
+# Control Transparency
 alpha = 0.9
 
 # Control colour
