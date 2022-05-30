@@ -1,5 +1,6 @@
 import pandas as pd
 
+pd.set_option('display.max_rows', None)
 
 aliment_17 = pd.read_csv('DisponibiliteAlimentaire_2017.csv')
 population = pd.read_csv('Population_2000_2018.csv')

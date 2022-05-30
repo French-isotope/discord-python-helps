@@ -1,7 +1,10 @@
+import pandas as pd
 from pandas_datareader import wb
 
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
 
-data = wb.download(indicator='FP.CPI.TOTL.ZG',country='all',start=2018,end=2020).reset_index()
+data = wb.download(indicator='FP.CPI.TOTL.ZG',country='all',start=2016,end=2020).reset_index()
 
 data = data[147:]
 
