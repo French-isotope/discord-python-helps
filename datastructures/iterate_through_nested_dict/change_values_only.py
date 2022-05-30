@@ -47,14 +47,22 @@ def nested_dict_pairs_iterator(dict_obj):
 
 
 # Get all key-value pairs of a nested dictionary as list
-all_pairs = list(nested_dict_pairs_iterator(key_ref))
-for pair in all_pairs:
-    print(pair)
+#all_pairs = list(nested_dict_pairs_iterator(key_ref))
+#for pair in all_pairs:
+#    print(pair)
 
 
-with open('test.json','w',encoding = 'utf-8') as f1:
-    output_prettified = json.dumps(all_pairs, indent=4, sort_keys=True)
-    f1.write(output_prettified)
+#with open('test.json','w',encoding = 'utf-8') as f1:
+#    output_prettified = json.dumps(all_pairs, indent=4, sort_keys=True)
+#    f1.write(output_prettified)
 
+for element in key_ref["files"]:
+    print(element)
+    for file in element:
+        print(file)
+
+
+#    for value in key_ref["files"][0]["sections"][0]["settings"]:
+#        print(value)
 
 #print(key_ref)
