@@ -52,4 +52,3 @@ gdp['Zone'] = gdp['Zone'].str.replace(" \[\d{1,3}\]","", regex=True)
 print(gdp)
 
 print(gdp.sort_values('Evol_gdp', ascending=False))
-
