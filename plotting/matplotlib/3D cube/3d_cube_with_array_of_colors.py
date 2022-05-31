@@ -15,4 +15,3 @@ ax.voxels(cube, facecolors=colors, edgecolors="w")
 
 ax.axis("off")
 plt.show()
-
