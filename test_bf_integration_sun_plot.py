@@ -120,8 +120,9 @@ def plot_noon_elevations_over_year(latitude):
         nice_day = nice_date_str(day)
         xticks.append(nice_day)
 
+    print(xticks)
     axes.set_yticks(yticks)
-    axes.set_xticklabels(xticks, fontdict=None, minor=False)
+    axes.set_xticklabels(xticks, fontdict=None, minor=False, rotation=45)
 
     #    axes.set_xlabels("Day")
 #    axes.set_yticklabels("Noon solar elevation (degrees)")
