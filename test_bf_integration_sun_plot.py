@@ -117,15 +117,10 @@ def plot_noon_elevations_over_year(latitude):
 
     xticks = []
     for day in xticks_range:
-        print(day)
         nice_day = nice_date_str(day)
-        print(nice_day)
         xticks.append(nice_day)
 
     axes.set_yticks(yticks)
-#    axes.set_xticks(xticks)
-
-#    axes.xticks(xticks) # no
     axes.set_xticklabels(xticks, fontdict=None, minor=False)
 
     #    axes.set_xlabels("Day")
