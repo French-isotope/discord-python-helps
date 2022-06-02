@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d799d69c-62f9-465a-8992-7d72ca0417f3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3d_cube/default.nix" beforeDir="false" afterPath="$PROJECT_DIR$/plotting/matplotlib/3d_cube/default.nix" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plotting/matplotlib/Solar elevation plotting/solar_elevation_plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting/matplotlib/Solar elevation plotting/solar_elevation_plotting.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
