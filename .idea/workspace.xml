@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d799d69c-62f9-465a-8992-7d72ca0417f3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/Solar elevation plotting/default.nix" beforeDir="false" afterPath="$PROJECT_DIR$/plotting/matplotlib/Solar elevation plotting/default.nix" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3D colored bar chart/default.nix" beforeDir="false" afterPath="$PROJECT_DIR$/plotting/matplotlib/3D colored bar chart/default.nix" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,11 +35,12 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/drone/projects/discord-python-helps/plotting/matplotlib/Solar elevation plotting"
+    "last_opened_file_path": "/home/drone/projects/discord-python-helps/plotting/matplotlib/3D colored bar chart"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/plotting/matplotlib/3D colored bar chart" />
       <recent name="$PROJECT_DIR$/plotting/matplotlib/Solar elevation plotting" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
