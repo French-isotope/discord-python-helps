@@ -102,8 +102,28 @@ liste_viande = ['Viande de Volailles']
 aliment_viande = aliment_pivot[aliment_pivot['Produit'].isin(liste_viande)].reset_index()
 #print(aliment_viande.head())
 
-
 inflation = inflation[196:]
+#inflation = inflation[196:]
+print(inflation)
 
-print(inflation.head())
+inflation = inflation.pivot_table(index="country",columns="year", values="FP.CPI.TOTL.ZG")
+
+year_2018 = inflation['year'] == "2018"
+year_2019 = inflation['year'] == "2019"
+year_2020 = inflation['year'] == "2020"
+year_2021 = inflation['year'] == "2021"
+
+
+
+
+#print(inflation.head())
+
+
+inflation.loc[inflation['2018'].isnull(),'2018'] = inflation['2020']
+
+inflation.loc[inflation['2019'].isnull(),'2019'] = inflation['2018']
+inflation.loc[inflation['2020'].isnull(),'2020'] = inflation['2019']
+inflation.loc[inflation['2021'].isnull(),'2021'] = inflation['2020']
+
+print(inflation[inflation.isna().any(axis=1)])
 

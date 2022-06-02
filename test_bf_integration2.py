@@ -1,10 +1,17 @@
 import pandas as pd
 
 pd.set_option('display.max_rows', None)
+pd.set_option('display.max_rows', 5000)
+pd.set_option('display.max_columns', 5000)
+pd.set_option('display.width', 10000)
+pd.set_option('display.expand_frame_repr', False)
+
 
 aliment_17 = pd.read_csv('DisponibiliteAlimentaire_2017.csv')
 population = pd.read_csv('Population_2000_2018.csv')
 gdp  = pd.read_csv('gdp_2018_2020.csv')
+
+print(gdp)
 
 aliment_pivot = aliment_17.pivot(index=['Zone','Produit','Année'],columns='Élément',values='Valeur').reset_index()
 aliment_pivot.head(3)

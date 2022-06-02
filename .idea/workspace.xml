@@ -5,26 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d799d69c-62f9-465a-8992-7d72ca0417f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/test_bf_integration_sun_plot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gdp_2018_2020.csv" beforeDir="false" afterPath="$PROJECT_DIR$/gdp_2018_2020.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3D cube/3d_cube.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3D cube/3d_cube_with_array_of_colors.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3D cube/MagicCube-master/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3D cube/MagicCube-master/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3D cube/MagicCube-master/README.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3D cube/MagicCube-master/code/axes3d.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3D cube/MagicCube-master/code/cube.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3D cube/MagicCube-master/code/cube_interactive.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3D cube/MagicCube-master/code/projection.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3D cube/MagicCube-master/code/simple_cube.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3D cube/MagicCube-master/documents/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/3D cube/MagicCube-master/documents/hogg_cube.tex" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test_before_integration.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_before_integration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_bf_integration2.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_bf_integration2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,7 +40,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.test_bf_integration_sun_plot">
     <configuration name="test_before_integration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="discord-python-helps" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -66,9 +62,53 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_bf_integration2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="discord-python-helps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_bf_integration2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_bf_integration_sun_plot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="discord-python-helps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_bf_integration_sun_plot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test_bf_integration_sun_plot" />
         <item itemvalue="Python.test_before_integration" />
+        <item itemvalue="Python.test_bf_integration2" />
       </list>
     </recent_temporary>
   </component>
@@ -82,5 +122,16 @@
       <updated>1653997937996</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
