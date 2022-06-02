@@ -1,3 +1,6 @@
+#! /usr/bin/env nix-shell
+#! nix-shell default.nix -i python
+
 import numpy as np
 import matplotlib.colors as colors
 import matplotlib.cm as cm
