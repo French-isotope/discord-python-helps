@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d799d69c-62f9-465a-8992-7d72ca0417f3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/plot equations Laura/default.nix" beforeDir="false" afterPath="$PROJECT_DIR$/plotting/matplotlib/plot equations Laura/default.nix" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotting/matplotlib/plot particules that moves/default.nix" beforeDir="false" afterPath="$PROJECT_DIR$/plotting/matplotlib/plot particules that moves/default.nix" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,16 +35,16 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/drone/projects/discord-python-helps/plotting/matplotlib/plot equations Laura"
+    "last_opened_file_path": "/home/drone/projects/discord-python-helps/plotting/matplotlib/plot particules that moves"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/plotting/matplotlib/plot particules that moves" />
       <recent name="$PROJECT_DIR$/plotting/matplotlib/plot equations Laura" />
       <recent name="$PROJECT_DIR$/plotting/matplotlib/MagicCube-master/code" />
       <recent name="$PROJECT_DIR$/plotting/matplotlib/gravity accel" />
       <recent name="$PROJECT_DIR$/plotting/matplotlib/cpu and memory usage plotting" />
-      <recent name="$PROJECT_DIR$/plotting/matplotlib/3D colored bar chart" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/plotting/matplotlib" />
