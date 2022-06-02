@@ -4,13 +4,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datetime import date, timedelta
 
+
 def cos_d(degrees):
     """ To save us converting to radians all the time """
     return np.cos(np.radians(degrees))
 
+
 def sin_d(degrees):
     """ To save us converting to radians all the time """
     return np.sin(np.radians(degrees))
+
 
 def asin_d(n):
     """ Returns the degrees sucht sin(degrees) == n
@@ -20,9 +23,11 @@ def asin_d(n):
     """
     return np.degrees(np.arcsin(n))
 
+
 def times_across_day(number_of_times):
     """return a numpy array of evenly spaced times"""
     return np.linspace(0 , 24, number_of_times)
+
 
 def nice_date_str(day_num):
     """ Returns a human readable date string for the date that is
@@ -69,37 +74,6 @@ def solar_elevation(latitude, day_num, solar_hour):
     cos_d(latitude) * cos_d(hour_angle) * cos_d(declination))
     return elevation
 
-def plot_noon_elevations_over_year(latitude):
-    """writing a function which will give a graph of the solar elevations
-       at a given latitude and date
-    """
-    axes = plt.axes()
-    axes.grid(True)
-    x = np.linspace(0,365)
-    y = solar_elevation(latitude,x,12)
-    axes.plot(x, y, linestyle="-",marker="None",color="orange")
-
-    xticks_range = range(0, 364, 30)
-    yticks = range(-90,100,10)
-    axes.set_yticks(yticks)
-
-    print(xticks_range)
-
-    xticks = []
-
-    for day in xticks_range:
-        print(day)
-#        test = nice_date_str(day)
-#        print(test)
-#        xticks.append(nice_date_str(day))
-
-#    axes.set_xticks(nice_date_str(xticks))
-
-    axes.set_xlabels("Day")
-    axes.set_yticklabels("Noon solar elevation (degrees)")
-    axes.set_title(f"Daily noon solar elevations at latitude={latitude:.2f}")
-    plt.tight_layout()
-    plt.show()
 
 def plot_noon_elevations_over_year(latitude):
     """writing a function which will give a graph of the solar elevations
@@ -129,9 +103,9 @@ def plot_noon_elevations_over_year(latitude):
     axes.set_xticks(range(0, (len(xticks) *30 ), 30))
     axes.set_xticklabels(xticks, fontdict=None, minor=False, rotation=70)
 
+    axes.set_xlabel("Day")
+    axes.set_ylabel("Noon solar elevation (degrees)")
 
-    #    axes.set_xlabels("Day")
-#    axes.set_yticklabels("Noon solar elevation (degrees)")
     axes.set_title(f"Daily noon solar elevations at latitude={latitude:.2f}")
     plt.tight_layout()
     plt.show()
