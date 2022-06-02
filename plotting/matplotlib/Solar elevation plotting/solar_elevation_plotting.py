@@ -106,5 +106,5 @@ def plot_noon_elevations_over_year(latitude):
     plt.tight_layout()
     plt.show()
 
-plot_noon_elevations_over_year(-43.52565)
+plot_noon_elevations_over_year(49.417)
 
