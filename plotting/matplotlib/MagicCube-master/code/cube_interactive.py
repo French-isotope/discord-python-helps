@@ -1,3 +1,6 @@
+#! /usr/bin/env nix-shell
+#! nix-shell default.nix -i python
+
 #----------------------------------------------------------------------
 # Matplotlib Rubik's cube simulator
 # Written by Jake Vanderplas
