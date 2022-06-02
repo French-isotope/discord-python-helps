@@ -85,7 +85,6 @@ def plot_noon_elevations_over_year(latitude):
     y = solar_elevation(latitude,x,12)
     axes.plot(x, y, linestyle="-",marker="None",color="orange")
 
-
     xticks_range = range(0,364,30)
     yticks = range(-90,100,10)
 
@@ -94,12 +93,9 @@ def plot_noon_elevations_over_year(latitude):
         nice_day = nice_date_str(day)
         xticks.append(nice_day)
 
-    print(xticks)
     axes.set_yticks(yticks)
-    print(yticks)
-    print(range(0, (len(xticks) *30 ), 30))
 
-    # we need to correlate exactly the scale with the number of ticks with set_xticks(range())
+    # We need to correlate exactly the scale with the number of ticks with set_xticks(range())
     axes.set_xticks(range(0, (len(xticks) *30 ), 30))
     axes.set_xticklabels(xticks, fontdict=None, minor=False, rotation=70)
 
