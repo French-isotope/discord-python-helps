@@ -1,5 +1,5 @@
 let pkgs = import ./nixpkgs.nix {};
-  pythonEnv = pkgs.python3.withPackages(p : [p.numpy p.matplotlib.pyplot p.datetime]);
+  pythonEnv = pkgs.python3.withPackages(p : [p.numpy p.matplotlib p.dateutils]);
 in pkgs.mkShell {
   buildInputs = [ pythonEnv ];
 }
