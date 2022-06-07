@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="7e9f47c5-84c4-4bfb-aacc-157d7853d568" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/clusters.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/testbfint_20.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_bf_integration5.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_bf_integration5.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/toolbox.py" beforeDir="false" afterPath="$PROJECT_DIR$/toolbox.py" afterDir="false" />
+=======
+    <list default="true" id="1ee962b5-3656-4956-bbf8-30b12129ed68" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/testbfint7.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testbfint8.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/textbfint10.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/textbfint9.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> b2754d89a339abccb616f00b0e29233c22610373
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +38,8 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="29o4IUBR7rwEi4G6vzEJd7zAtV1" />
+  <component name="ProjectId" id="29veMNcxanSQDdQl7Qcx3ZmZjA9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,21 +48,36 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+<<<<<<< HEAD
     &quot;last_opened_file_path&quot;: &quot;C:/projects/discord-python-helps/Plotting/matplotlib/3D colored bar chart&quot;
+=======
+    &quot;last_opened_file_path&quot;: &quot;/home/drone/projects/discord-python-helps/plotting/matplotlib/plot particules that moves&quot;
+>>>>>>> b2754d89a339abccb616f00b0e29233c22610373
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\projects\discord-python-helps\Plotting\matplotlib\3D colored bar chart" />
-      <recent name="C:\projects\discord-python-helps\OOP stuff\Creating own special methods" />
+      <recent name="$PROJECT_DIR$/plotting/matplotlib/plot particules that moves" />
+      <recent name="$PROJECT_DIR$/plotting/matplotlib/plot equations Laura" />
+      <recent name="$PROJECT_DIR$/plotting/matplotlib/MagicCube-master/code" />
+      <recent name="$PROJECT_DIR$/plotting/matplotlib/gravity accel" />
+      <recent name="$PROJECT_DIR$/plotting/matplotlib/cpu and memory usage plotting" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="C:\projects\discord-python-helps" />
       <recent name="C:\projects\discord-python-helps\Plotting\matplotlib\3D cube" />
     </key>
   </component>
   <component name="RunManager" selected="Python.testbfint_20">
     <configuration name="3D colored bar chart" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+=======
+      <recent name="$PROJECT_DIR$/plotting/matplotlib" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.textbfint10">
+    <configuration name="plot_equation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+>>>>>>> b2754d89a339abccb616f00b0e29233c22610373
       <module name="discord-python-helps" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -57,11 +85,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Plotting/matplotlib/3D colored bar chart" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/plotting/matplotlib/plot equations Laura" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Plotting/matplotlib/3D colored bar chart/3D colored bar chart.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plotting/matplotlib/plot equations Laura/plot_equation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -70,7 +98,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration name="cube_interactive (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="testbfint7" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+>>>>>>> b2754d89a339abccb616f00b0e29233c22610373
       <module name="discord-python-helps" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -78,11 +110,19 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
+<<<<<<< HEAD
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Plotting/matplotlib/3D cube/MagicCube-master/code" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Plotting/matplotlib/3D cube/MagicCube-master/code/cube_interactive.py" />
+=======
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testbfint7.py" />
+>>>>>>> b2754d89a339abccb616f00b0e29233c22610373
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -91,7 +131,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_bf_integration5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="testbfint8" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="discord-python-helps" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -103,7 +143,49 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_bf_integration5.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testbfint8.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="textbfint10" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="discord-python-helps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/textbfint10.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="textbfint9" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="discord-python-helps" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/textbfint9.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,35 +238,32 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Python.testbfint_20" />
         <item itemvalue="Python.toolbox" />
         <item itemvalue="Python.test_bf_integration5" />
         <item itemvalue="Python.cube_interactive (1)" />
         <item itemvalue="Python.3D colored bar chart" />
+=======
+        <item itemvalue="Python.textbfint10" />
+        <item itemvalue="Python.textbfint9" />
+        <item itemvalue="Python.testbfint8" />
+        <item itemvalue="Python.testbfint7" />
+        <item itemvalue="Python.plot_equation" />
+>>>>>>> b2754d89a339abccb616f00b0e29233c22610373
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7e9f47c5-84c4-4bfb-aacc-157d7853d568" name="Changes" comment="" />
-      <created>1653766025031</created>
+      <changelist id="d799d69c-62f9-465a-8992-7d72ca0417f3" name="Changes" comment="" />
+      <created>1653997937996</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1653766025031</updated>
+      <updated>1653997937996</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ID_ORDER">
-      <list>
-        <option value="Default.Root" />
-        <option value="Default.Author" />
-        <option value="Default.Date" />
-        <option value="Default.Subject" />
-        <option value="Space.CommitStatus" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

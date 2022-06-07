@@ -1,3 +1,6 @@
+#! /usr/bin/env nix-shell
+#! nix-shell default.nix -i python
+
 import matplotlib.pyplot as plt
 
 # Init vars
