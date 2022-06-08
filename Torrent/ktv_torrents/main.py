@@ -82,7 +82,8 @@ for root, dirs, files in os.walk(path_to_files):
 arr2 = []
 
 for item in arr:
-#    arr2.append(item.replace('/', '\\'))
+    if '/' in item:
+        item = item.replace('/', '\\')
     arr2.append(item.replace('C:\\torrents_project\\', ''))
 
 
