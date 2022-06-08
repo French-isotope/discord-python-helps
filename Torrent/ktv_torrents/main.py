@@ -68,11 +68,11 @@ def find_path(dict_obj, i=None):
                     find_path(item, i)
                 # if reached here, the last added index was incorrect, so removed
                 path.pop()
-
-        if 'accessible' in v.keys():
-            print(f'v: {v["accessible"]}')
-            # add path to our result
-            result.append(copy(path))
+        if type(v) == dict:
+            if 'accessible' in v.keys():
+#                print(f'v: {v["accessible"]}')
+                # add path to our result
+                result.append(copy(path))
 
         # remove the key added in the first line
         if path != []:
