@@ -27,8 +27,7 @@ for item in arr:
     arr2.append(item.replace('C:\\torrents_project\\', ''))
 
 
-#print(f'arr2 : {arr2}')
-
+#
 d = dict()
 for path in arr2:
     parent = d
