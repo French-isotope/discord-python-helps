@@ -41,12 +41,12 @@ def listdirs(rootdir):
             test = it.path.split('\\')[1:]
             if not test[0] in test_dict:
                 test_dict[test[0]] = []
-                print(f'test : {test}')
+#                print(f'test : {test}')
             listdirs(it)
 
 listdirs(path_to_files)
 
-print(json.dumps(test_dict, indent=4))
+#print(json.dumps(test_dict, indent=4))
 
 
 """
@@ -95,9 +95,22 @@ for path in arr2:
     parent = d
     for dir in path.split('\\'):
         if dir not in parent:
-            print(f'parent : {parent}')
+#            print(f'parent : {parent}')
             parent[dir] = dict()
         parent = parent[dir]
 
 
 print(json.dumps(d, indent=4))
+
+
+def print_dict(dictionary, ident='', braces=0):
+    """ Recursively prints nested dictionaries."""
+    for key, value in dictionary.items():
+        if isinstance(value, dict):
+            print( '%s%s%s%s' %(ident,braces*'[',key,braces*']'))
+            print_dict(value, ident+'  ', braces+1)
+        else:
+            print(ident+'%s = %s' %(key, value))
+
+
+print(print_dict(d))
