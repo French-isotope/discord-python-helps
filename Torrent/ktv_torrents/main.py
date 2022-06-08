@@ -27,6 +27,8 @@ for item in arr:
     arr2.append(item.replace('C:\\torrents_project\\', ''))
 
 
+extensions = ['mp4', 'mkv', 'avi']
+
 #
 d = dict()
 for path in arr2:
@@ -34,6 +36,8 @@ for path in arr2:
     for dir in path.split('\\'):
         if dir not in parent:
             parent[dir] = dict()
+            if any(extension in dir for extension in extensions):
+                parent[dir]['accessible'] = False
         parent = parent[dir]
 
 
@@ -64,9 +68,12 @@ def find_path(dict_obj, i=None):
                     find_path(item, i)
                 # if reached here, the last added index was incorrect, so removed
                 path.pop()
-        if len(v) == 0:
+
+        if 'accessible' in v.keys():
+            print(f'v: {v["accessible"]}')
             # add path to our result
             result.append(copy(path))
+
         # remove the key added in the first line
         if path != []:
             path.pop()
