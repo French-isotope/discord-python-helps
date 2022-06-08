@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 
-path_to_files = "C:\\torrents_project"
+path_to_files = "C:/torrents_project"
 
 rights_files = dict()
 
@@ -107,10 +107,29 @@ def print_dict(dictionary, ident='', braces=0):
     """ Recursively prints nested dictionaries."""
     for key, value in dictionary.items():
         if isinstance(value, dict):
-            print( '%s%s%s%s' %(ident,braces*'[',key,braces*']'))
+            print('lolilol' + '%s%s%s%s' %(ident,braces*'[',key,braces*']'))
             print_dict(value, ident+'  ', braces+1)
         else:
-            print(ident+'%s = %s' %(key, value))
+            print('lalala' + ident+'%s = %s' %(key, value))
 
 
 print(print_dict(d))
+
+print('loliliolzefrlsdjhfgkljsdhfg\n\n\n')
+
+def iterdict(dir, path):
+    for k, v in dir.items():
+        path = f'{path}/{k}'
+        if type(v) == dict:
+            print(path)
+            iterdict(v, path)
+        else:
+            print(v)
+
+
+print(type(d))
+print(iterdict(d, path_to_files))
+
+
+
+
