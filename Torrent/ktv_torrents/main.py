@@ -41,7 +41,7 @@ for path in arr2:
     for dir in path.split('\\'):
         if dir not in parent:
             parent[dir] = dict()
-            if any(extension in dir for extension in extensions):
+            if any(f'.{extension}' in dir for extension in extensions):
                 parent[dir]['accessible'] = False
         parent = parent[dir]
 
@@ -100,8 +100,40 @@ def nested_get(dic, keys):
     return dic
 
 
+
+
 for resultat in result:
-#    print(resultat)
-    print(f'{path_to_files}/{"/".join(resultat)}')
+    print(resultat)
+#    print(f'{path_to_files}/{"/".join(resultat)}')
     print(nested_get(d, resultat))
 
+
+
+def compare_nested_get(dic_file, dic_recreate, keys):
+    for key in keys:
+        if key in dic_recreate and not key in dic_file and any(f'.{extension}' in key for extension in extensions):
+            dic_file[key] = {"accessible": False}
+
+        if key in dic_file and not key in dic_recreate:
+            dic_recreate[key] = {}
+
+        if not key in dic_recreate and key in dic_file:
+            print(f'removing : {dic_file[key]}')
+            del dic_file[key]
+
+    return dic_file, dic_recreate
+
+for resultat in result:
+    print(resultat)
+#    print(f'{path_to_files}/{"/".join(resultat)}')
+    print(nested_get(d, resultat))
+
+    compare_nested_get(rights_file, d, resultat)
+
+print("\n\n\n\n\n\n")
+
+print(rights_file)
+
+print("\n\n")
+
+print(json.dumps(d, indent=4))
