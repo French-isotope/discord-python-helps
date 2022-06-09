@@ -1,18 +1,24 @@
 import os
 import json
+import torrentool as to
 from pathlib import Path
+
+with open("rights_files.json", "r") as f:
+    rights_file = f.read().rstrip()
+
+print(rights_file)
 
 
 path_to_files = "C:/torrents_project"
 
-rights_files = dict()
+arborescence = dict()
 
 # create arborescence in datastructure
 arr = []
 for root, dirs, files in os.walk(path_to_files):
     for dir in dirs:
-        if not dir in rights_files:
-            rights_files[dir] = []
+        if not dir in arborescence:
+            arborescence[dir] = []
 
     for filename in files:
         sub_dir = root.split("/")[1:]
@@ -43,6 +49,9 @@ for path in arr2:
 
 print(json.dumps(d, indent=4))
 
+#with open("rights_files.json", "w") as f:
+#    f.write(json.dumps(d, indent=4))
+
 print('\n\n\n')
 
 result = []
@@ -70,7 +79,6 @@ def find_path(dict_obj, i=None):
                 path.pop()
         if type(v) == dict:
             if 'accessible' in v.keys():
-#                print(f'v: {v["accessible"]}')
                 # add path to our result
                 result.append(copy(path))
 
@@ -84,3 +92,4 @@ find_path(d)
 
 for resultat in result:
     print(f'{path_to_files}/{"/".join(resultat)}')
+
