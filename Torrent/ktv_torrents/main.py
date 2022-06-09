@@ -8,7 +8,6 @@ with open("rights_files.json", "r") as f:
 
 print(rights_file)
 
-
 path_to_files = "C:/torrents_project"
 
 arborescence = dict()
@@ -90,6 +89,19 @@ def find_path(dict_obj, i=None):
 # default starting index is set to None
 find_path(d)
 
+print("\n\n\n\n\n\n")
+#print(d)
+print("\n\n\n\n\n\n")
+
+
+def nested_get(dic, keys):
+    for key in keys:
+        dic = dic[key]
+    return dic
+
+
 for resultat in result:
-    print(f'{path_to_files}/{"/".join(resultat)}')
+#    print(resultat)
+#    print(f'{path_to_files}/{"/".join(resultat)}')
+    print(nested_get(d, resultat))
 
