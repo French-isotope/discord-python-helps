@@ -102,6 +102,6 @@ def nested_get(dic, keys):
 
 for resultat in result:
 #    print(resultat)
-#    print(f'{path_to_files}/{"/".join(resultat)}')
+    print(f'{path_to_files}/{"/".join(resultat)}')
     print(nested_get(d, resultat))
 
