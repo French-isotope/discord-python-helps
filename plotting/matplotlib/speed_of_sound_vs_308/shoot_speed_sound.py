@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
@@ -61,6 +62,17 @@ def distance_over_time(drag, air_dens, area, init_speed, flight_time, mass_of_bu
 
 print(distance_over_time(drag_coef, air_density, bullet_area, 400, 0.452, bullet_mass))
 
-
+y = list()
+x = list()
 for time in np.arange(0, 10, 1):
-    print(f'distance at {time} seconds : {distance_over_time(drag_coef, air_density, bullet_area, 823, time, bullet_mass, True)} meters')
+    x.append(time)
+    y.append(distance_over_time(drag_coef, air_density, bullet_area, 823, time, bullet_mass))
+#    print(f'distance at {time} seconds : {distance_over_time(drag_coef, air_density, bullet_area, 823, time, bullet_mass, True)} meters')
+
+plt.plot(x, y, 'o', label='bullet distance over time')
+plt.title('bullet distance over time')
+plt.xlabel('temps')
+plt.ylabel('distance')
+plt.grid(axis = 'y')
+plt.legend(loc='upper center')
+plt.show()
