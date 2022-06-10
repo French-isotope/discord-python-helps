@@ -109,31 +109,55 @@ for resultat in result:
 
 
 
-def compare_nested_get(dic_file, dic_recreate, keys):
+def compare_nested_get(dic_file, dic_recreate, keys, extensions):
+    dic_to_return = dict()
     for key in keys:
         if key in dic_recreate and not key in dic_file and any(f'.{extension}' in key for extension in extensions):
-            dic_file[key] = {"accessible": False}
+            dic_to_return[key] = {"accessible": False}
 
         if key in dic_file and not key in dic_recreate:
-            dic_recreate[key] = {}
+            dic_to_return[key] = {}
 
         if not key in dic_recreate and key in dic_file:
             print(f'removing : {dic_file[key]}')
             del dic_file[key]
 
-    return dic_file, dic_recreate
+    return dic_to_return
+
 
 for resultat in result:
     print(resultat)
 #    print(f'{path_to_files}/{"/".join(resultat)}')
     print(nested_get(d, resultat))
 
-    compare_nested_get(rights_file, d, resultat)
+#    compare_nested_get(rights_file, d, resultat)
 
-print("\n\n\n\n\n\n")
 
-print(rights_file)
 
 print("\n\n")
 
+print(rights_file)
 print(json.dumps(d, indent=4))
+
+
+print("\n\n")
+
+
+def compare_nested_keys(dic_json, dic_directory, paths, extensions):
+    dic_to_return = dict()
+    for keys in paths:
+        for key in keys:
+            if key in dic_directory and key in dic_json:
+                #                print(key)
+                dic_to_return[key] = {}
+            if key in dic_directory and any(extension in key for extension in extensions) and key in dic_json:
+                print("haaaaa")
+                dic_to_return[key] = dic_json[key]
+                pass
+    print(dic_to_return)
+#    print(extensions)
+
+
+print("\n\n lolilol \n\n")
+
+compare_nested_keys(rights_file, d, result, extensions)
