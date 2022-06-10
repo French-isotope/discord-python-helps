@@ -38,10 +38,28 @@ print(datas_308)
 # (m) is the mass of the bullet.
 #
 
-drag_coef   = 0.295 #
-air_density = 1.2 # kg/cubic meter at normal pressure and temperature
-bullet_area = 4.8 * 10**-5 # m² cross-sectional area
-flight_time = 0
-bullet_mass = 0
+drag_coef     = 0.295 #
+air_density   = 1.2 # kg/cubic meter at normal pressure and temperature
+bullet_area   = 4.8 * 10**-5 # m² cross-sectional area the value for a .308 caliber*
+initial_speed = 823
+bullet_mass   = 0.016 # kg
 
-print(bullet_area)
+def distance_over_time(drag, air_dens, area, init_speed, flight_time, mass_of_bullet, debug=False):
+    # Calculate distance x by time
+    x = (init_speed * flight_time) - (drag * air_dens * area * (init_speed**2) * (flight_time**2)) / (2 * mass_of_bullet)
+    if debug:
+        print(f'drag : {drag}\n'
+              f'init_speed : {init_speed} \n'
+              f'air_density : {air_dens}\n'
+              f'area : {area}\n'
+              f'init speed : {init_speed}\n'
+              f'flight time : {flight_time}\n'
+              f'mass of bullet : {mass_of_bullet}')
+    return x
+
+
+print(distance_over_time(drag_coef, air_density, bullet_area, 400, 0.452, bullet_mass))
+
+
+for time in range(0, 2, 0.1):
+    print(f'distance at {time} seconds : {distance_over_time(drag_coef, air_density, bullet_area, 823, time, bullet_mass)} meters')
