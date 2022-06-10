@@ -49,12 +49,12 @@ def distance_over_time(drag, air_dens, area, init_speed, flight_time, mass_of_bu
     # Calculate distance x by time
     x = (init_speed * flight_time) - (drag * air_dens * area * (init_speed**2) * (flight_time**2)) / (2 * mass_of_bullet)
     if debug:
-        print(f'drag : {drag}\n'
-              f'init_speed : {init_speed} \n'
-              f'air_density : {air_dens}\n'
-              f'area : {area}\n'
-              f'init speed : {init_speed}\n'
-              f'flight time : {flight_time}\n'
+        print(f'drag : {drag} | '
+              f'init_speed : {init_speed} | '
+              f'air_density : {air_dens} | '
+              f'area : {area} | '
+              f'init speed : {init_speed} | '
+              f'flight time : {flight_time} | '
               f'mass of bullet : {mass_of_bullet}')
     return x
 
@@ -63,4 +63,4 @@ print(distance_over_time(drag_coef, air_density, bullet_area, 400, 0.452, bullet
 
 
 for time in np.arange(0, 10, 1):
-    print(f'distance at {time} seconds : {distance_over_time(drag_coef, air_density, bullet_area, 823, time, bullet_mass)} meters')
+    print(f'distance at {time} seconds : {distance_over_time(drag_coef, air_density, bullet_area, 823, time, bullet_mass, True)} meters')
