@@ -23,14 +23,12 @@ for root, dirs, files in os.walk(path_to_files):
         sub_dir = root.split("/")[1:]
         arr.append(os.path.join(root, filename))
 
-
 # correct paths
 arr2 = []
 for item in arr:
     if '/' in item:
         item = item.replace('/', '\\')
     arr2.append(item.replace('C:\\torrents_project\\', ''))
-
 
 extensions = ['mp4', 'mkv', 'avi']
 
@@ -45,10 +43,9 @@ for path in arr2:
                 parent[dir]['accessible'] = False
         parent = parent[dir]
 
-
 print(json.dumps(d, indent=4))
 
-#with open("rights_files.json", "w") as f:
+# with open("rights_files.json", "w") as f:
 #    f.write(json.dumps(d, indent=4))
 
 print('\n\n\n')
@@ -90,7 +87,7 @@ def find_path(dict_obj, i=None):
 find_path(d)
 
 print("\n\n\n\n\n\n")
-#print(d)
+# print(d)
 print("\n\n\n\n\n\n")
 
 
@@ -100,13 +97,10 @@ def nested_get(dic, keys):
     return dic
 
 
-
-
 for resultat in result:
     print(resultat)
-#    print(f'{path_to_files}/{"/".join(resultat)}')
+    #    print(f'{path_to_files}/{"/".join(resultat)}')
     print(nested_get(d, resultat))
-
 
 
 def compare_nested_get(dic_file, dic_recreate, keys, extensions):
@@ -127,11 +121,10 @@ def compare_nested_get(dic_file, dic_recreate, keys, extensions):
 
 for resultat in result:
     print(resultat)
-#    print(f'{path_to_files}/{"/".join(resultat)}')
+    #    print(f'{path_to_files}/{"/".join(resultat)}')
     print(nested_get(d, resultat))
 
 #    compare_nested_get(rights_file, d, resultat)
-
 
 
 print("\n\n")
@@ -139,21 +132,42 @@ print("\n\n")
 print(rights_file)
 print(json.dumps(d, indent=4))
 
-
 print("\n\n")
 
 
-def compare_nested_keys(dic_json, dic_directory, paths, extensions):
+def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=False):
     dic_to_return = dict()
     for keys in paths:
+        #        print(f'keys : {keys}')
         for key in keys:
-            if key in dic_directory and key in dic_json:
-                #                print(key)
+            if key in dic_directory \
+                    and any(extension in key for extension in extensions) \
+                    and key in dic_json:
+                print(f'la key {dic_directory[key]}')
+                dic_to_return = dic_directory[key]
+#                dic_json = dic_json[key]
+#                dic_directory = dic_directory[key]
+
+            if key in dic_directory \
+                    and any(extension in dic_directory[key] for extension in extensions) \
+                    and key not in dic_json:
+                dic_to_return[key] = {'accessible': is_shared}
+
+            if key in dic_directory \
+                    and key in dic_json:
+                print("key !:: " + key)
                 dic_to_return[key] = {}
-            if key in dic_directory and any(extension in key for extension in extensions) and key in dic_json:
-                print("haaaaa")
-                dic_to_return[key] = dic_json[key]
+                dic_to_return = dic_to_return[key]
+                dic_directory = dic_directory[key]
+
+#                print("1" + dic_json)
+#                dic_json = dic_json[key]
+
+            if not key in dic_directory and key in dic_json:
+                # 4/ key directory avec item en moins par rapport à key
+                # 	--> supprimer item de la datastruct file = ne pas ajouter à la new datastruct
                 pass
+
     print(dic_to_return)
 #    print(extensions)
 
