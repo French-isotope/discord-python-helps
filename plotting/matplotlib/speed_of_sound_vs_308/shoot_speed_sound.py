@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
@@ -61,5 +62,5 @@ def distance_over_time(drag, air_dens, area, init_speed, flight_time, mass_of_bu
 print(distance_over_time(drag_coef, air_density, bullet_area, 400, 0.452, bullet_mass))
 
 
-for time in range(0, 2, 0.1):
+for time in np.arange(0, 10, 1):
     print(f'distance at {time} seconds : {distance_over_time(drag_coef, air_density, bullet_area, 823, time, bullet_mass)} meters')
