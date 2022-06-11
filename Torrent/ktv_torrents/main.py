@@ -124,47 +124,35 @@ dictb = {
         }
 
 
-def check_if_key_in_path_exist(key, listitems2, dict_to_test2):
+def check_if_key_in_path_exist(key, listitems2, dict_to_test2, debug=False):
     try:
         functools.reduce(lambda e, key: e[key], listitems2, dict_to_test2)
     except KeyError as e:
-        print(f'KHEEEEEEEEEEEEY error : {e}')
-        print(listitems2)
+        if debug:
+            print(f'KHEEEEEEEEEEEEY error : {e}')
         return False
     else:
         if key in functools.reduce(lambda e, key: e[key], listitems2, dict_to_test2):
-            print('Ouiii khé')
-            print(listitems2)
+            if debug:
+                print('Ouiii khé')
             return True
         else:
-            print('ONO paké')
-            print(listitems2)
+            if debug:
+                print('ONO paké')
             return False
 
 
-
-new_list_for_test = list()
-
 for path in result:
-    for item in listitems:
+    new_list_for_test = list()
+    for item in path:
         print(f"key : {item}")
         new_list_for_test.append(item)
-        check_if_key_in_path_exist(item, new_list_for_test[:-1], dict_to_test)
+        check_if_key_in_path_exist(item, new_list_for_test[:-1], d)
+        check_if_key_in_path_exist(item, new_list_for_test[:-1], rights_file, True)
 
-
-# reduce(lambda d,key: d[key],path,aDict).update(aSecondDict)
 functools.reduce(lambda e, key: e[key], listitems, dict_to_test).update(dictb)
-# reduce(dict.__getitem__,path,aDict).update(aSecondDict)
-
-#functools.reduce(dict.__getitem__,path, dict_to_test).update(dictb)
-print()
-print(dict_to_test)
-
-#print(rights_file)
-#print(json.dumps(d, indent=4))
 
 print("")
-
 
 def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=False):
     dic_to_return = dict()
