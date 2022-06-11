@@ -111,18 +111,6 @@ def compare_nested_get(dic_file, dic_recreate, keys, extensions):
     return dic_to_return
 
 
-dict_to_test = {'1988_-_shoju_sentai': {'saison_1': {'01.mp4': {}}}}
-
-listitems = ['1988_-_shoju_sentai', 'saison_1', '01.mp4']
-
-
-dictb = {
-            '01.mp4':
-            {
-                'accessible': False
-            }
-        }
-
 
 def check_if_key_in_path_exist(key, listitems2, dict_to_test2, debug=False):
     try:
@@ -147,10 +135,11 @@ for path in result:
     for item in path:
         print(f"key : {item}")
         new_list_for_test.append(item)
-        check_if_key_in_path_exist(item, new_list_for_test[:-1], d)
-        check_if_key_in_path_exist(item, new_list_for_test[:-1], rights_file, True)
+        if check_if_key_in_path_exist(item, new_list_for_test[:-1], d) and check_if_key_in_path_exist(item, new_list_for_test[:-1], rights_file):
+            print("hahaha")
+        else:
+            print("hihihi")
 
-functools.reduce(lambda e, key: e[key], listitems, dict_to_test).update(dictb)
 
 print("")
 
@@ -186,11 +175,9 @@ def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=Fa
                 pass
 
     print(dic_to_return)
-#    print(extensions)
 
 
-print("\n lolilol \n")
-
+print("\n lolilol")
 
 compare_nested_keys(rights_file, d, result, extensions)
 
