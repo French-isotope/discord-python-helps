@@ -2,11 +2,12 @@ import os
 import json
 import torrentool as to
 from pathlib import Path
+import functools
 
 with open("rights_files.json", "r") as f:
-    rights_file = f.read().rstrip()
+    rights_file = json.loads(f.read())
 
-print(rights_file)
+#print(rights_file)
 
 path_to_files = "C:/torrents_project"
 
@@ -43,12 +44,13 @@ for path in arr2:
                 parent[dir]['accessible'] = False
         parent = parent[dir]
 
-print(json.dumps(d, indent=4))
+
+#print(json.dumps(d, indent=4))
 
 # with open("rights_files.json", "w") as f:
 #    f.write(json.dumps(d, indent=4))
 
-print('\n\n\n')
+print('\n')
 
 result = []
 path = []
@@ -86,21 +88,11 @@ def find_path(dict_obj, i=None):
 # default starting index is set to None
 find_path(d)
 
-print("\n\n\n\n\n\n")
-# print(d)
-print("\n\n\n\n\n\n")
-
 
 def nested_get(dic, keys):
     for key in keys:
         dic = dic[key]
     return dic
-
-
-for resultat in result:
-    print(resultat)
-    #    print(f'{path_to_files}/{"/".join(resultat)}')
-    print(nested_get(d, resultat))
 
 
 def compare_nested_get(dic_file, dic_recreate, keys, extensions):
@@ -121,18 +113,73 @@ def compare_nested_get(dic_file, dic_recreate, keys, extensions):
 
 for resultat in result:
     print(resultat)
-    #    print(f'{path_to_files}/{"/".join(resultat)}')
-    print(nested_get(d, resultat))
-
 #    compare_nested_get(rights_file, d, resultat)
 
+print("")
 
-print("\n\n")
+for resultat in result:
+    print(nested_get(d, resultat))
+    #    print(f'{path_to_files}/{"/".join(resultat)}')
 
-print(rights_file)
-print(json.dumps(d, indent=4))
 
-print("\n\n")
+print("")
+
+for resultat in result:
+    print(nested_get(rights_file, resultat))
+    #    print(f'{path_to_files}/{"/".join(resultat)}')
+
+
+def compare_keys_in_dict():
+    dic_to_return = dict()
+    pass
+
+dict_to_test = dict()
+print(f'1 {dict_to_test}')
+
+dict_to_test['1988_-_shoju_sentai'] = {'saison_1': {}}
+print(f'2 {dict_to_test}')
+
+#dict_to_test = dict_to_test.__setitem__('saison_1', {})
+#print(f'3 {dict_to_test}')
+
+#{dict_to_test['1988_-_shoju_sentai'].__setitem__('saison_1', {})
+#print(f'4 {dict_to_test}')
+
+#dict_to_test2 = dict_to_test['saison_1']
+#print(f'5 {dict_to_test2}')
+
+dict_to_test = {'1988_-_shoju_sentai': {'saison_1': {'01.mp4': {}}}}
+
+listitems = ['1988_-_shoju_sentai', 'saison_1']
+
+
+#dict_to_test = dict()
+#print(f'1 {dict_to_test}')
+
+dictb = {
+            '01.mp4':
+            {
+                'accessible': False
+            }
+        }
+
+
+if '01.mp4' in functools.reduce(lambda e, key: e[key], listitems, dict_to_test):
+    print('Ouiii')
+
+
+# reduce(lambda d,key: d[key],path,aDict).update(aSecondDict)
+functools.reduce(lambda e, key: e[key], listitems, dict_to_test).update(dictb)
+# reduce(dict.__getitem__,path,aDict).update(aSecondDict)
+
+#functools.reduce(dict.__getitem__,path, dict_to_test).update(dictb)
+print()
+print(dict_to_test)
+
+#print(rights_file)
+#print(json.dumps(d, indent=4))
+
+print("")
 
 
 def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=False):
@@ -143,8 +190,8 @@ def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=Fa
             if key in dic_directory \
                     and any(extension in key for extension in extensions) \
                     and key in dic_json:
-                print(f'la key {dic_directory[key]}')
-                dic_to_return = dic_directory[key]
+                print(f'la key {key}')
+                dic_to_return = dic_json[key]
 #                dic_json = dic_json[key]
 #                dic_directory = dic_directory[key]
 
@@ -159,10 +206,8 @@ def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=Fa
                 dic_to_return[key] = {}
                 dic_to_return = dic_to_return[key]
                 dic_directory = dic_directory[key]
-
 #                print("1" + dic_json)
 #                dic_json = dic_json[key]
-
             if not key in dic_directory and key in dic_json:
                 # 4/ key directory avec item en moins par rapport à key
                 # 	--> supprimer item de la datastruct file = ne pas ajouter à la new datastruct
@@ -172,6 +217,8 @@ def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=Fa
 #    print(extensions)
 
 
-print("\n\n lolilol \n\n")
+print("\n lolilol \n")
+
 
 compare_nested_keys(rights_file, d, result, extensions)
+
