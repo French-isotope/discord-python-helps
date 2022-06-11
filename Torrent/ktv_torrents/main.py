@@ -150,7 +150,7 @@ print(f'2 {dict_to_test}')
 
 dict_to_test = {'1988_-_shoju_sentai': {'saison_1': {'01.mp4': {}}}}
 
-listitems = ['1988_-_shoju_sentai', 'saison_1']
+listitems = ['1988_-_shoju_sentai', 'saison_1', '01.mp4']
 
 
 #dict_to_test = dict()
@@ -164,8 +164,31 @@ dictb = {
         }
 
 
-if '01.mp4' in functools.reduce(lambda e, key: e[key], listitems, dict_to_test):
-    print('Ouiii')
+def check_if_key_in_path_exist(key, listitems2, dict_to_test2):
+    try:
+        functools.reduce(lambda e, key: e[key], listitems2, dict_to_test2)
+    except KeyError as e:
+        print(f'KHEEEEEEEEEEEEY error : {e}')
+        print(listitems2)
+        return False
+    else:
+        #
+        if key in functools.reduce(lambda e, key: e[key], listitems2, dict_to_test2):
+            print('Ouiii khé')
+            print(listitems2)
+            return True
+        else:
+            print('ONO paké')
+            print(listitems2)
+            return False
+
+
+new_list_for_test = list()
+for item in listitems:
+    print(f"key : {item}")
+    new_list_for_test.append(item)
+    check_if_key_in_path_exist(item, new_list_for_test[:-1], dict_to_test)
+
 
 
 # reduce(lambda d,key: d[key],path,aDict).update(aSecondDict)
