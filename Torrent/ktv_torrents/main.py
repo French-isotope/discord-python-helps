@@ -172,7 +172,6 @@ def check_if_key_in_path_exist(key, listitems2, dict_to_test2):
         print(listitems2)
         return False
     else:
-        #
         if key in functools.reduce(lambda e, key: e[key], listitems2, dict_to_test2):
             print('Ouiii khé')
             print(listitems2)
