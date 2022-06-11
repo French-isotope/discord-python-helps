@@ -111,50 +111,10 @@ def compare_nested_get(dic_file, dic_recreate, keys, extensions):
     return dic_to_return
 
 
-for resultat in result:
-    print(resultat)
-#    compare_nested_get(rights_file, d, resultat)
-
-print("")
-
-for resultat in result:
-    print(nested_get(d, resultat))
-    #    print(f'{path_to_files}/{"/".join(resultat)}')
-
-
-print("")
-
-for resultat in result:
-    print(nested_get(rights_file, resultat))
-    #    print(f'{path_to_files}/{"/".join(resultat)}')
-
-
-def compare_keys_in_dict():
-    dic_to_return = dict()
-    pass
-
-dict_to_test = dict()
-print(f'1 {dict_to_test}')
-
-dict_to_test['1988_-_shoju_sentai'] = {'saison_1': {}}
-print(f'2 {dict_to_test}')
-
-#dict_to_test = dict_to_test.__setitem__('saison_1', {})
-#print(f'3 {dict_to_test}')
-
-#{dict_to_test['1988_-_shoju_sentai'].__setitem__('saison_1', {})
-#print(f'4 {dict_to_test}')
-
-#dict_to_test2 = dict_to_test['saison_1']
-#print(f'5 {dict_to_test2}')
-
 dict_to_test = {'1988_-_shoju_sentai': {'saison_1': {'01.mp4': {}}}}
 
 listitems = ['1988_-_shoju_sentai', 'saison_1', '01.mp4']
 
-
-#dict_to_test = dict()
-#print(f'1 {dict_to_test}')
 
 dictb = {
             '01.mp4':
@@ -182,12 +142,14 @@ def check_if_key_in_path_exist(key, listitems2, dict_to_test2):
             return False
 
 
-new_list_for_test = list()
-for item in listitems:
-    print(f"key : {item}")
-    new_list_for_test.append(item)
-    check_if_key_in_path_exist(item, new_list_for_test[:-1], dict_to_test)
 
+new_list_for_test = list()
+
+for path in result:
+    for item in listitems:
+        print(f"key : {item}")
+        new_list_for_test.append(item)
+        check_if_key_in_path_exist(item, new_list_for_test[:-1], dict_to_test)
 
 
 # reduce(lambda d,key: d[key],path,aDict).update(aSecondDict)
