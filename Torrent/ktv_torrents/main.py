@@ -241,4 +241,22 @@ dick1.update(dick2)
 
 print(json.dumps(dick1, indent=4))
 
+"""
+
+key = '1988_-_shoju_sentai'
+list_key = ['1988_-_shoju_sentai']
+if key_in_path(key, list_key[:-1], json) and not any(f'.{ext}' in key for ext in extensions):
+    functools.reduce(lambda e, key: e[key], list_key, dic_return).update(key)
+
+if key_in_path(key, list_key[:-1], json) and any(f'.{ext}' in key for ext in extensions):
+    value = json[key]
+    functools.reduce(lambda e, key: e[key], list_key, dic_return).update(value)
+
+
+# on met toutes les clés de paths dans le dic_return sans check le json : osef
+# on a juste besoin de savoir si une clé qui comporte une extension existe dans le json 
+# si oui on update la value complète de cette clé dans le dic_return
+
+
+"""
 
