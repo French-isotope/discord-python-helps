@@ -53,7 +53,6 @@ for path in arr2:
 print('\n')
 
 
-
 result = []
 path = []
 
@@ -136,17 +135,17 @@ def key_in_path(key, listitems2, dict_to_test2, debug=False):
                 print('ONO paké')
             return False
 
-
+"""
 for path in result:
     new_list_for_test = list()
     for item in path:
         print(f"key : {item}")
         new_list_for_test.append(item)
         if key_in_path(item, new_list_for_test[:-1], d) and key_in_path(item, new_list_for_test[:-1], rights_file):
-            print("hahaha")
+            pass
         else:
-            print("hihihi")
-
+            pass
+"""
 
 def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=False, debug=False):
     dic_to_return = dict()
@@ -278,11 +277,11 @@ for path in result:
         path_item = []
         for item in path:
             path_item.append(item)
-            print(path_item[:-1])
+            #print(path_item[:-1])
             functools.reduce(lambda e, key: e[key], path_item[:-1], test_dict).update({item: {}})
 
 
-print(f'plop \n{json.dumps(test_dict, indent=4)}')
+# print(f'plop \n{json.dumps(test_dict, indent=4)}')
 
 
 dic1 = {
@@ -309,7 +308,7 @@ dic_directory = {
     }
 }}
 
-
+"""
 
 def Merge(dicts):
     result_dict = {}
@@ -323,16 +322,16 @@ def Merge(dicts):
 
     return result_dict
 
-
+"""
 # Driver code
 dict1 = {'a': {'e':{}}, 'b': 8}
 dict2 = {'a': {'f':{}}, 'd': 6, 'c': 4}
 dicts_list = [dict1, dict2]
 
-print(f'merging : {Merge(dicts_list)}')
+# print(f'merging : {Merge(dicts_list)}')
 
 
-print(f'merging : {dict(dict1, **dict2)}')
+# print(f'merging : {dict(dict1, **dict2)}')
 
 
 
@@ -343,7 +342,7 @@ for path in result:
         path_item = []
         for item in path:
             path_item.append(item)
-            print(path_item[:-1])
+            # print(path_item[:-1])
             functools.reduce(lambda e, key: e[key], path_item[:-1], test_dict).update({item: {}})
 
 
@@ -353,20 +352,27 @@ def merging_dicts_without_removing(dict_dir, dict_json, extensions):
     # copier le json du dict_dir 1 pour 1 puis checker dans le json pour chercher les valeurs
     dict_return = dict_dir.copy()
     for path in result:
-        print(functools.reduce(lambda e, key: e[key], path, dict_dir))
-        if functools.reduce(lambda e, key: e[key], path, dict_json)['accessible']:
-            functools.reduce(lambda e, key: e[key], path, dict_return)['accessible'] = True
+        # print(functools.reduce(lambda e, key: e[key], path, dict_dir))
+        last_key = path[-1]
+        if last_key in functools.reduce(lambda e, key: e[key], path[:-1], dict_json):
+            if functools.reduce(lambda e, key: e[key], path, dict_json)['accessible']:
+                functools.reduce(lambda e, key: e[key], path, dict_return)['accessible'] = True
 
     return dict_return
 
 
+
+print(result)
+
 print()
 print("prout")
 print()
-plop = merging_dicts_without_removing(d, rights_file, extensions)
+new_datastructure_rights = merging_dicts_without_removing(d, rights_file, extensions)
 
-print(json.dumps(plop, indent=4))
+print(json.dumps(new_datastructure_rights, indent=4))
 
+with open("rights_files.json", "w", encoding='utf-8') as f:
+    json.dump(new_datastructure_rights, f, indent=4)
 
 
 

@@ -6,11 +6,17 @@
             },
             "02.mp4": {
                 "accessible": false
+            },
+            "03.mp4": {
+                "accessible": true
+            },
+            "04.mp4": {
+                "accessible": false
             }
         },
         "saison_2": {
             "03.mp4": {
-                "accessible": false
+                "accessible": true
             },
             "04.mp4": {
                 "accessible": false
@@ -39,9 +45,6 @@
             "accessible": false
         },
         "03.mp4": {
-            "accessible": false
-        },
-        "04.mp4": {
             "accessible": false
         }
     }
