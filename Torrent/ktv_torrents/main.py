@@ -112,7 +112,7 @@ def compare_nested_get(dic_file, dic_recreate, keys, extensions):
 
 
 
-def check_if_key_in_path_exist(key, listitems2, dict_to_test2, debug=False):
+def key_in_path(key, listitems2, dict_to_test2, debug=False):
     try:
         functools.reduce(lambda e, key: e[key], listitems2, dict_to_test2)
     except KeyError as e:
@@ -135,13 +135,34 @@ for path in result:
     for item in path:
         print(f"key : {item}")
         new_list_for_test.append(item)
-        if check_if_key_in_path_exist(item, new_list_for_test[:-1], d) and check_if_key_in_path_exist(item, new_list_for_test[:-1], rights_file):
+        if key_in_path(item, new_list_for_test[:-1], d) and key_in_path(item, new_list_for_test[:-1], rights_file):
             print("hahaha")
         else:
             print("hihihi")
 
 
+def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=False, debug=False):
+    dic_to_return = dict()
+    for path in paths:
+        new_list_for_test = list()
+        for item in path:
+            if debug:
+                print(f"key : {item}")
+            new_list_for_test.append(item)
+
+            # Pour add une value add .update() à functools.reduce(lambda e, key: e[key], listitems2, dict_to_test2)
+            if key_in_path(item, new_list_for_test[:-1], dic_directory) \
+                    and key_in_path(item, new_list_for_test[ :-1], dic_json):
+
+                if debug:
+                    print("hahaha")
+            else:
+                if debug:
+                    print("hihihi")
+
+
 print("")
+
 
 def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=False):
     dic_to_return = dict()
@@ -179,5 +200,45 @@ def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=Fa
 
 print("\n lolilol")
 
-compare_nested_keys(rights_file, d, result, extensions)
+for path in result:
+    print(path)
+
+
+
+dick1 = {
+    '1988_-_shoju_sentai': {
+        'saison_1': {
+            '01.mp4': {
+                'accessible': False
+            },
+        }
+    }
+}
+
+dick2 =  {
+    '1988_-_shoju_sentai': {
+        'saison_1': {
+            '01.mp4': {
+                'accessible': False
+            },
+        'saison_2': {
+            '01.mp4': {
+                'accessible': False
+            },
+        }
+    },
+   'gto': {
+        'saison_1': {
+            '01.mp4': {
+                'accessible': False
+            },
+        }
+    }
+}
+}
+
+dick1.update(dick2)
+
+print(json.dumps(dick1, indent=4))
+
 
