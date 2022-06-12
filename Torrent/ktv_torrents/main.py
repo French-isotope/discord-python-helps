@@ -200,8 +200,8 @@ def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=Fa
 
 print("\n lolilol")
 
-for path in result:
-    print(path)
+#for path in result:
+#    print(path)
 
 
 
@@ -211,6 +211,11 @@ dick1 = {
             '01.mp4': {
                 'accessible': False
             },
+            'saison_2': {
+            '01.mp4': {
+                'accessible': False
+            },
+            }
         }
     }
 }
@@ -218,28 +223,24 @@ dick1 = {
 dick2 =  {
     '1988_-_shoju_sentai': {
         'saison_1': {
-            '01.mp4': {
+            '02.mp4': {
                 'accessible': False
-            },
-        'saison_2': {
-            '01.mp4': {
-                'accessible': False
-            },
-        }
-    },
-   'gto': {
-        'saison_1': {
-            '01.mp4': {
-                'accessible': False
-            },
+            }
         }
     }
 }
-}
 
-dick1.update(dick2)
 
-print(json.dumps(dick1, indent=4))
+
+#dick1.update(dick2)
+
+
+#dick1 = dict(dick1.items() + dick2.items())
+
+
+#merged = dick1.merge()
+
+#print(f'merged : \n{json.dumps(merged, indent=4)}')
 
 """
 
@@ -262,3 +263,63 @@ if key_in_path(key, list_key[:-1], json) and any(f'.{ext}' in key for ext in ext
 
 """
 
+test_dict = dict()
+
+for path in result:
+#    print(f'plop2 {path}')
+    if any(ext in item for ext in extensions for item in path):
+        path_item = []
+        for item in path:
+            path_item.append(item)
+            print(path_item[:-1])
+            functools.reduce(lambda e, key: e[key], path_item[:-1], test_dict).update({item: {}})
+
+
+print(f'plop \n{json.dumps(test_dict, indent=4)}')
+
+
+dic1 = {
+'1988_-_shoju_sentai': {
+    'saison_1': {
+        '01.mp4': {
+            'accessible': False
+            },
+        }
+    }
+}
+
+dic_directory = {
+'1988_-_shoju_sentai': {
+    'saison_1': {
+        '01.mp4': {
+            },
+        '02.mp4': {
+            }
+        },
+    'saison_2': {
+        '01.mp4': {
+        }
+    }
+}}
+
+
+
+def Merge(dicts):
+    result_dict = {}
+    for d in dicts:
+        if isinstance(d, dict):
+            for key, val in d.items():
+                try:
+                    result_dict.setdefault(key, {}).extend(val)
+                except Exception as e:
+                    print(f'e: {e}')
+
+    return result_dict
+
+
+# Driver code
+dict1 = {'a': {'e':{}}, 'b': 8}
+dict2 = {'a': {'f': {}}, 'd': 6, 'c': 4}
+dicts_list = [dict1, dict2]
+
+print(f'merging : {Merge(dicts_list)}')
