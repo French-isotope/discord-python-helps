@@ -347,18 +347,27 @@ for path in result:
             functools.reduce(lambda e, key: e[key], path_item[:-1], test_dict).update({item: {}})
 
 
-
+# key_in_path(key, listitems2, dict_to_test2, debug=False)
 
 def merging_dicts_without_removing(dict_dir, dict_json, extensions):
-    dict_return = dict()
-    paths = find_path(dict_dir)
+    # copier le json du dict_dir 1 pour 1 puis checker dans le json pour chercher les valeurs
+    dict_return = dict_dir.copy()
 
-    for path in paths:
-        if any(ext in item for ext in extensions for item in path):
-            path_item = []
-            for key in path:
-                path_item.append(key)
-                print(functools.reduce(lambda e, key: e[key], path_item[:-1], dict_dir))
+    for path in result:
+        print(functools.reduce(lambda e, key: e[key], path, dict_dir))
+        print(functools.reduce(lambda e, key: e[key], path, dict_json))
+        print()
 
 
-print(result)
+#                print(f'path_item : {path_item} prout key: {key} prout {functools.reduce(lambda e, key: e[key], path_item[:-1], dict_dir)}')
+
+
+
+print()
+print("prout")
+print()
+merging_dicts_without_removing(d, rights_file, extensions)
+
+
+
+
