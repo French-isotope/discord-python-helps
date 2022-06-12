@@ -352,21 +352,20 @@ for path in result:
 def merging_dicts_without_removing(dict_dir, dict_json, extensions):
     # copier le json du dict_dir 1 pour 1 puis checker dans le json pour chercher les valeurs
     dict_return = dict_dir.copy()
-
     for path in result:
         print(functools.reduce(lambda e, key: e[key], path, dict_dir))
-        print(functools.reduce(lambda e, key: e[key], path, dict_json))
-        print()
+        if functools.reduce(lambda e, key: e[key], path, dict_json)['accessible']:
+            functools.reduce(lambda e, key: e[key], path, dict_return)['accessible'] = True
 
-
-#                print(f'path_item : {path_item} prout key: {key} prout {functools.reduce(lambda e, key: e[key], path_item[:-1], dict_dir)}')
-
+    return dict_return
 
 
 print()
 print("prout")
 print()
-merging_dicts_without_removing(d, rights_file, extensions)
+plop = merging_dicts_without_removing(d, rights_file, extensions)
+
+print(json.dumps(plop, indent=4))
 
 
 
