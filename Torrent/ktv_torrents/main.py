@@ -257,6 +257,8 @@ if key_in_path(key, list_key[:-1], json) and any(f'.{ext}' in key for ext in ext
 # on a juste besoin de savoir si une clé qui comporte une extension existe dans le json 
 # si oui on update la value complète de cette clé dans le dic_return
 
+# on teste la présence du path complet dans json, si présent ajouter valeur du json dans dict return, 
+# si absent ajouter nouveau path dans dict_return avec value : default (False)
 
 """
 
