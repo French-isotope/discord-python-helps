@@ -52,13 +52,13 @@ for path in arr2:
 
 print('\n')
 
-result = []
 path = []
 from copy import copy
 
 
 # i is the index of the list that dict_obj is part of
 def find_path(dict_obj, i=None):
+    result = []
     for k, v in dict_obj.items():
         # add key to path
         path.append(k)
@@ -83,10 +83,12 @@ def find_path(dict_obj, i=None):
         # remove the key added in the first line
         if path != []:
             path.pop()
+    return result
+
 
 
 # default starting index is set to None
-find_path(d)
+result = find_path(d)
 
 
 def nested_get(dic, keys):
@@ -319,7 +321,36 @@ def Merge(dicts):
 
 # Driver code
 dict1 = {'a': {'e':{}}, 'b': 8}
-dict2 = {'a': {'f': {}}, 'd': 6, 'c': 4}
+dict2 = {'a': {'f':{}}, 'd': 6, 'c': 4}
 dicts_list = [dict1, dict2]
 
 print(f'merging : {Merge(dicts_list)}')
+
+
+print(f'merging : {dict(dict1, **dict2)}')
+
+
+
+
+for path in result:
+#    print(f'plop2 {path}')
+    if any(ext in item for ext in extensions for item in path):
+        path_item = []
+        for item in path:
+            path_item.append(item)
+            print(path_item[:-1])
+            functools.reduce(lambda e, key: e[key], path_item[:-1], test_dict).update({item: {}})
+
+
+
+
+def merging_dicts_without_removing(dict_dir, dict_json, extensions):
+    dict_return = dict()
+    paths = find_path(dict_dir)
+
+    for path in paths:
+        if any(ext in item for ext in extensions for item in path):
+            path_item = []
+            for key in path:
+                path_item.append(key)
+                print(functools.reduce(lambda e, key: e[key], path_item[:-1], dict_dir))
