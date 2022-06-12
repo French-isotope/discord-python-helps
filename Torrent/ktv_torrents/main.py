@@ -52,13 +52,17 @@ for path in arr2:
 
 print('\n')
 
+
+
+result = []
 path = []
+
+
 from copy import copy
 
-
+# à réétudier
 # i is the index of the list that dict_obj is part of
 def find_path(dict_obj, i=None):
-    result = []
     for k, v in dict_obj.items():
         # add key to path
         path.append(k)
@@ -83,12 +87,13 @@ def find_path(dict_obj, i=None):
         # remove the key added in the first line
         if path != []:
             path.pop()
-    return result
 
 
 
 # default starting index is set to None
-result = find_path(d)
+find_path(d)
+
+
 
 
 def nested_get(dic, keys):
@@ -354,3 +359,6 @@ def merging_dicts_without_removing(dict_dir, dict_json, extensions):
             for key in path:
                 path_item.append(key)
                 print(functools.reduce(lambda e, key: e[key], path_item[:-1], dict_dir))
+
+
+print(result)
