@@ -2,28 +2,35 @@
     "1988_-_shoju_sentai": {
         "saison_1": {
             "01.mp4": {
-                "accessible": true
+                "accessible": true,
+                "torrent_file": "blablabla"
             },
             "02.mp4": {
-                "accessible": true
+                "accessible": true,
+                "torrent_file": ""
             },
             "03.mp4": {
-                "accessible": false
+                "accessible": false,
+                "torrent_file": ""
             },
             "04.mp4": {
-                "accessible": false
+                "accessible": false,
+                "torrent_file": ""
             },
             "sub1": {
                 "01.mp4": {
-                    "accessible": false
+                    "accessible": false,
+                    "torrent_file": ""
                 },
                 "02.mp4": {
-                    "accessible": false
+                    "accessible": false,
+                    "torrent_file": ""
                 },
                 "New folder": {
                     "New folder": {
                         "02.mp4": {
-                            "accessible": false
+                            "accessible": false,
+                            "torrent_file": "bloblo"
                         }
                     }
                 }
@@ -31,36 +38,45 @@
         },
         "saison_2": {
             "03.mp4": {
-                "accessible": false
+                "accessible": false,
+                "torrent_file": ""
             },
             "04.mp4": {
-                "accessible": false
+                "accessible": false,
+                "torrent_file": ""
             }
         }
     },
     "gto": {
         "01.mp4": {
-            "accessible": true
+            "accessible": false,
+            "torrent_file": ""
         },
         "02.mp4": {
-            "accessible": true
+            "accessible": false,
+            "torrent_file": ""
         },
         "03.mp4": {
-            "accessible": true
+            "accessible": false,
+            "torrent_file": ""
         },
         "04.mp4": {
-            "accessible": true
+            "accessible": false,
+            "torrent_file": ""
         }
     },
     "turboranger": {
         "01.mp4": {
-            "accessible": false
+            "accessible": false,
+            "torrent_file": ""
         },
         "02.mp4": {
-            "accessible": false
+            "accessible": false,
+            "torrent_file": ""
         },
         "03.mp4": {
-            "accessible": true
+            "accessible": false,
+            "torrent_file": ""
         }
     }
 }
