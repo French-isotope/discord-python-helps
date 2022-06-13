@@ -19,6 +19,13 @@
                 },
                 "02.mp4": {
                     "accessible": false
+                },
+                "New folder": {
+                    "New folder": {
+                        "02.mp4": {
+                            "accessible": false
+                        }
+                    }
                 }
             }
         },

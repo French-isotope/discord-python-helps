@@ -359,7 +359,7 @@ def merging_dicts_without_removing(dict_dir, dict_json, extensions, debug=True):
             functools.reduce(lambda e, key: e[key], path, dict_json)
         except KeyError as e:
             if debug:
-                print(f'KHEEEEEEEEEEEEY error : {e}')
+                print(f'Key error : {e}')
             pass
         else:
             if last_key in functools.reduce(lambda e, key: e[key], path[:-1], dict_json):
