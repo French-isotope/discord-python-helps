@@ -8,10 +8,18 @@
                 "accessible": false
             },
             "03.mp4": {
-                "accessible": true
+                "accessible": false
             },
             "04.mp4": {
                 "accessible": false
+            },
+            "sub1": {
+                "01.mp4": {
+                    "accessible": false
+                },
+                "02.mp4": {
+                    "accessible": false
+                }
             }
         },
         "saison_2": {

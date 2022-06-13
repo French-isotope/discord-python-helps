@@ -348,15 +348,23 @@ for path in result:
 
 # key_in_path(key, listitems2, dict_to_test2, debug=False)
 
-def merging_dicts_without_removing(dict_dir, dict_json, extensions):
+def merging_dicts_without_removing(dict_dir, dict_json, extensions, debug=True):
     # copier le json du dict_dir 1 pour 1 puis checker dans le json pour chercher les valeurs
     dict_return = dict_dir.copy()
     for path in result:
         # print(functools.reduce(lambda e, key: e[key], path, dict_dir))
         last_key = path[-1]
-        if last_key in functools.reduce(lambda e, key: e[key], path[:-1], dict_json):
-            if functools.reduce(lambda e, key: e[key], path, dict_json)['accessible']:
-                functools.reduce(lambda e, key: e[key], path, dict_return)['accessible'] = True
+
+        try:
+            functools.reduce(lambda e, key: e[key], path, dict_json)
+        except KeyError as e:
+            if debug:
+                print(f'KHEEEEEEEEEEEEY error : {e}')
+            pass
+        else:
+            if last_key in functools.reduce(lambda e, key: e[key], path[:-1], dict_json):
+                if functools.reduce(lambda e, key: e[key], path, dict_json)['accessible']:
+                    functools.reduce(lambda e, key: e[key], path, dict_return)['accessible'] = True
 
     return dict_return
 
@@ -367,6 +375,9 @@ print(result)
 print()
 print("prout")
 print()
+
+print(json.dumps(d, indent=4))
+
 new_datastructure_rights = merging_dicts_without_removing(d, rights_file, extensions)
 
 print(json.dumps(new_datastructure_rights, indent=4))
