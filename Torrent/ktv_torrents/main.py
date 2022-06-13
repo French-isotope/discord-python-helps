@@ -373,10 +373,8 @@ def merging_dicts_without_removing(dict_dir, dict_json, extensions, debug=True):
 print(result)
 
 print()
-print("prout")
-print()
 
-print(json.dumps(d, indent=4))
+#print(json.dumps(d, indent=4))
 
 new_datastructure_rights = merging_dicts_without_removing(d, rights_file, extensions)
 
@@ -386,4 +384,11 @@ with open("rights_files.json", "w", encoding='utf-8') as f:
     json.dump(new_datastructure_rights, f, indent=4)
 
 
+
+
+
+for path in result:
+    if key_in_path("accessible", path, new_datastructure_rights, debug=False):
+        if functools.reduce(lambda e, key: e[key], path, new_datastructure_rights)['accessible']:
+            print(f'Création du torrent pour {"_".join(path)}')
 
