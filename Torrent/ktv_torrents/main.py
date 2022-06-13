@@ -151,17 +151,20 @@ print(result)
 
 new_datastructure_rights = merging_dicts_without_removing(d, rights_file, extensions)
 
-print(json.dumps(new_datastructure_rights, indent=4))
-
-with open("rights_files.json", "w", encoding='utf-8') as f:
-    json.dump(new_datastructure_rights, f, indent=4)
-
-# import random
-# import string
+import random
+import string
 
 for path in result:
     if key_in_path("accessible", path, new_datastructure_rights, debug=False):
         if functools.reduce(lambda e, key: e[key], path, new_datastructure_rights)['accessible'] \
         and functools.reduce(lambda e, key: e[key], path, new_datastructure_rights)['torrent_file'] == '':
             print(f'Création du torrent pour {"_".join(path)}')
+            source = string.ascii_letters + string.digits
+            result_str = ''.join((random.choice(source) for i in range(32)))
+            functools.reduce(lambda e, key: e[key], path, new_datastructure_rights)['torrent_file'] = f'{result_str.lower()}.torrent'
 
+print(json.dumps(new_datastructure_rights, indent=4))
+
+
+with open("rights_files.json", "w", encoding='utf-8') as f:
+    json.dump(new_datastructure_rights, f, indent=4)
