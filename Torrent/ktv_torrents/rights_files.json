@@ -2,10 +2,10 @@
     "1988_-_shoju_sentai": {
         "saison_1": {
             "01.mp4": {
-                "accessible": false
+                "accessible": true
             },
             "02.mp4": {
-                "accessible": false
+                "accessible": true
             },
             "03.mp4": {
                 "accessible": false
@@ -18,7 +18,7 @@
                     "accessible": false
                 },
                 "02.mp4": {
-                    "accessible": true
+                    "accessible": false
                 },
                 "New folder": {
                     "New folder": {
@@ -40,16 +40,16 @@
     },
     "gto": {
         "01.mp4": {
-            "accessible": false
+            "accessible": true
         },
         "02.mp4": {
-            "accessible": false
+            "accessible": true
         },
         "03.mp4": {
-            "accessible": false
+            "accessible": true
         },
         "04.mp4": {
-            "accessible": false
+            "accessible": true
         }
     },
     "turboranger": {

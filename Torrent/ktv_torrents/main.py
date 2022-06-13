@@ -50,12 +50,11 @@ for path in arr2:
 # with open("rights_files.json", "w") as f:
 #    f.write(json.dumps(d, indent=4))
 
-print('\n')
+print('')
 
 
 result = []
 path = []
-
 
 from copy import copy
 
@@ -94,30 +93,6 @@ find_path(d)
 
 
 
-
-def nested_get(dic, keys):
-    for key in keys:
-        dic = dic[key]
-    return dic
-
-
-def compare_nested_get(dic_file, dic_recreate, keys, extensions):
-    dic_to_return = dict()
-    for key in keys:
-        if key in dic_recreate and not key in dic_file and any(f'.{extension}' in key for extension in extensions):
-            dic_to_return[key] = {"accessible": False}
-
-        if key in dic_file and not key in dic_recreate:
-            dic_to_return[key] = {}
-
-        if not key in dic_recreate and key in dic_file:
-            print(f'removing : {dic_file[key]}')
-            del dic_file[key]
-
-    return dic_to_return
-
-
-
 def key_in_path(key, listitems2, dict_to_test2, debug=False):
     try:
         functools.reduce(lambda e, key: e[key], listitems2, dict_to_test2)
@@ -135,139 +110,7 @@ def key_in_path(key, listitems2, dict_to_test2, debug=False):
                 print('ONO paké')
             return False
 
-"""
-for path in result:
-    new_list_for_test = list()
-    for item in path:
-        print(f"key : {item}")
-        new_list_for_test.append(item)
-        if key_in_path(item, new_list_for_test[:-1], d) and key_in_path(item, new_list_for_test[:-1], rights_file):
-            pass
-        else:
-            pass
-"""
-
-def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=False, debug=False):
-    dic_to_return = dict()
-    for path in paths:
-        new_list_for_test = list()
-        for item in path:
-            if debug:
-                print(f"key : {item}")
-            new_list_for_test.append(item)
-
-            # Pour add une value add .update() à functools.reduce(lambda e, key: e[key], listitems2, dict_to_test2)
-            if key_in_path(item, new_list_for_test[:-1], dic_directory) \
-                    and key_in_path(item, new_list_for_test[ :-1], dic_json):
-
-                if debug:
-                    print("hahaha")
-            else:
-                if debug:
-                    print("hihihi")
-
-
 print("")
-
-
-def compare_nested_keys(dic_json, dic_directory, paths, extensions, is_shared=False):
-    dic_to_return = dict()
-    for keys in paths:
-        #        print(f'keys : {keys}')
-        for key in keys:
-            if key in dic_directory \
-                    and any(extension in key for extension in extensions) \
-                    and key in dic_json:
-                print(f'la key {key}')
-                dic_to_return = dic_json[key]
-#                dic_json = dic_json[key]
-#                dic_directory = dic_directory[key]
-
-            if key in dic_directory \
-                    and any(extension in dic_directory[key] for extension in extensions) \
-                    and key not in dic_json:
-                dic_to_return[key] = {'accessible': is_shared}
-
-            if key in dic_directory \
-                    and key in dic_json:
-                print("key !:: " + key)
-                dic_to_return[key] = {}
-                dic_to_return = dic_to_return[key]
-                dic_directory = dic_directory[key]
-#                print("1" + dic_json)
-#                dic_json = dic_json[key]
-            if not key in dic_directory and key in dic_json:
-                # 4/ key directory avec item en moins par rapport à key
-                # 	--> supprimer item de la datastruct file = ne pas ajouter à la new datastruct
-                pass
-
-    print(dic_to_return)
-
-
-print("\n lolilol")
-
-#for path in result:
-#    print(path)
-
-
-
-dick1 = {
-    '1988_-_shoju_sentai': {
-        'saison_1': {
-            '01.mp4': {
-                'accessible': False
-            },
-            'saison_2': {
-            '01.mp4': {
-                'accessible': False
-            },
-            }
-        }
-    }
-}
-
-dick2 =  {
-    '1988_-_shoju_sentai': {
-        'saison_1': {
-            '02.mp4': {
-                'accessible': False
-            }
-        }
-    }
-}
-
-
-
-#dick1.update(dick2)
-
-
-#dick1 = dict(dick1.items() + dick2.items())
-
-
-#merged = dick1.merge()
-
-#print(f'merged : \n{json.dumps(merged, indent=4)}')
-
-"""
-
-key = '1988_-_shoju_sentai'
-list_key = ['1988_-_shoju_sentai']
-if key_in_path(key, list_key[:-1], json) and not any(f'.{ext}' in key for ext in extensions):
-    functools.reduce(lambda e, key: e[key], list_key, dic_return).update(key)
-
-if key_in_path(key, list_key[:-1], json) and any(f'.{ext}' in key for ext in extensions):
-    value = json[key]
-    functools.reduce(lambda e, key: e[key], list_key, dic_return).update(value)
-
-
-# on met toutes les clés de paths dans le dic_return sans check le json : osef
-# on a juste besoin de savoir si une clé qui comporte une extension existe dans le json 
-# si oui on update la value complète de cette clé dans le dic_return
-
-# on teste la présence du path complet dans json, si présent ajouter valeur du json dans dict return, 
-# si absent ajouter nouveau path dans dict_return avec value : default (False)
-
-"""
 
 test_dict = dict()
 
@@ -284,57 +127,6 @@ for path in result:
 # print(f'plop \n{json.dumps(test_dict, indent=4)}')
 
 
-dic1 = {
-'1988_-_shoju_sentai': {
-    'saison_1': {
-        '01.mp4': {
-            'accessible': False
-            },
-        }
-    }
-}
-
-dic_directory = {
-'1988_-_shoju_sentai': {
-    'saison_1': {
-        '01.mp4': {
-            },
-        '02.mp4': {
-            }
-        },
-    'saison_2': {
-        '01.mp4': {
-        }
-    }
-}}
-
-"""
-
-def Merge(dicts):
-    result_dict = {}
-    for d in dicts:
-        if isinstance(d, dict):
-            for key, val in d.items():
-                try:
-                    result_dict.setdefault(key, {}).extend(val)
-                except Exception as e:
-                    print(f'e: {e}')
-
-    return result_dict
-
-"""
-# Driver code
-dict1 = {'a': {'e':{}}, 'b': 8}
-dict2 = {'a': {'f':{}}, 'd': 6, 'c': 4}
-dicts_list = [dict1, dict2]
-
-# print(f'merging : {Merge(dicts_list)}')
-
-
-# print(f'merging : {dict(dict1, **dict2)}')
-
-
-
 
 for path in result:
 #    print(f'plop2 {path}')
@@ -348,7 +140,7 @@ for path in result:
 
 # key_in_path(key, listitems2, dict_to_test2, debug=False)
 
-def merging_dicts_without_removing(dict_dir, dict_json, extensions, debug=True):
+def merging_dicts_without_removing(dict_dir, dict_json, extensions, debug=False):
     # copier le json du dict_dir 1 pour 1 puis checker dans le json pour chercher les valeurs
     dict_return = dict_dir.copy()
     for path in result:
@@ -382,9 +174,6 @@ print(json.dumps(new_datastructure_rights, indent=4))
 
 with open("rights_files.json", "w", encoding='utf-8') as f:
     json.dump(new_datastructure_rights, f, indent=4)
-
-
-
 
 
 for path in result:
