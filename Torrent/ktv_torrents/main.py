@@ -124,47 +124,74 @@ def merging_dicts_without_removing(dict_dir, dict_json, extensions, debug=False)
             if last_key in functools.reduce(lambda e, key: e[key], path[:-1], dict_json):
 
                 if functools.reduce(lambda e, key: e[key], path, dict_json)['accessible']:
-
-                    print(f'1 : {functools.reduce(lambda e, key: e[key], path, dict_return)}')
-                    #functools.reduce(lambda e, key: e[key], path, dict_return)['accessible'] = True
                     functools.reduce(lambda e, key: e[key], path, dict_return).update({'accessible': True})
 
-                    print(f'2 : {functools.reduce(lambda e, key: e[key], path, dict_return)}')
-
                 if not 'torrent_file' in functools.reduce(lambda e, key: e[key], path, dict_json):
-
-                    print(f'yapa1 : {functools.reduce(lambda e, key: e[key], path, dict_return)}')
                     functools.reduce(lambda e, key: e[key], path, dict_return)['torrent_file'] = ''
-                    print(f'yapa2 : {functools.reduce(lambda e, key: e[key], path, dict_return)}')
 
                 elif 'torrent_file' in functools.reduce(lambda e, key: e[key], path, dict_json) \
                 and not functools.reduce(lambda e, key: e[key], path, dict_json)['torrent_file'] == '':
-
-                    print(f'ya1 : {functools.reduce(lambda e, key: e[key], path, dict_return)}')
                     functools.reduce(lambda e, key: e[key], path, dict_return)['torrent_file'] = functools.reduce(lambda e, key: e[key], path, dict_json)['torrent_file']
-                    print(f'ya2 : {functools.reduce(lambda e, key: e[key], path, dict_return)}')
+
 
     return dict_return
 
 
-print(result)
+#print(json.dumps(result, indent=4))
+
+
+print(json.dumps(rights_file, indent=4))
+print(json.dumps(d, indent=4))
+
+
 
 new_datastructure_rights = merging_dicts_without_removing(d, rights_file, extensions)
 
+
+
 import random
 import string
+
+from torrentool.api import Torrent
+
 
 for path in result:
     if key_in_path("accessible", path, new_datastructure_rights, debug=False):
         if functools.reduce(lambda e, key: e[key], path, new_datastructure_rights)['accessible'] \
         and functools.reduce(lambda e, key: e[key], path, new_datastructure_rights)['torrent_file'] == '':
+            filename = "_".join(path)
             print(f'Création du torrent pour {"_".join(path)}')
-            source = string.ascii_letters + string.digits
-            result_str = ''.join((random.choice(source) for i in range(32)))
-            functools.reduce(lambda e, key: e[key], path, new_datastructure_rights)['torrent_file'] = f'{result_str.lower()}.torrent'
+            path_to_file = f'{path_to_files}/{"/".join(path)}'
+            print(f'Chemin d\'accès : {path_to_file}')
 
-print(json.dumps(new_datastructure_rights, indent=4))
+            my_torrent = Torrent.create_from(path_to_file)
+            my_torrent.announce_urls = ['udp://tracker.openbittorrent.com:80/announce',
+                                        'udp://tracker.opentrackr.org:1337/announce']
+            my_torrent.to_file(f'C:/tatata/{filename}.torrent')
+
+            functools.reduce(lambda e, key: e[key], path, new_datastructure_rights)['torrent_file'] = f'{filename}.torrent'
+
+
+
+
+
+
+#print(json.dumps(new_datastructure_rights, indent=4))
+
 
 
 with open("rights_files.json", "w", encoding='utf-8') as f:
     json.dump(new_datastructure_rights, f, indent=4)
+
+
+
+
+
+
+
+
+
+# udp://tracker.openbittorrent.com:80/announce
+# udp://tracker.opentrackr.org:1337/announce
+
+
