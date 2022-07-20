@@ -1,0 +1,20 @@
+{
+    "Battlestar Galactica": {
+        "Saison 1": {
+            "01.avi": {
+                "accessible": true,
+                "torrent_file": "Battlestar Galactica_Saison 1_01.avi.torrent"
+            },
+            "pilote": {
+                "part 1.avi": {
+                    "accessible": true,
+                    "torrent_file": "Battlestar Galactica_Saison 1_pilote_part 1.avi.torrent"
+                },
+                "part 2.avi": {
+                    "accessible": true,
+                    "torrent_file": "Battlestar Galactica_Saison 1_pilote_part 2.avi.torrent"
+                }
+            }
+        }
+    }
+}

@@ -80,3 +80,16 @@ for key, element in database["sidedish"]["elements"].items():
     print(f'price of {key} : {element["price"]}')
     print(f'quantity of {key} : {element["quantity"]}')
 
+
+
+
+
+def go_pew(answer):
+    if answer:
+        return True
+    if not answer:
+        return False
+
+
+
+assert go_pew(False)
