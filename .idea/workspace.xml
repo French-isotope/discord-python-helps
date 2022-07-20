@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ee962b5-3656-4956-bbf8-30b12129ed68" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/testbfint7.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testbfint8.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/textbfint10.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/textbfint9.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testbfint11.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,8 +51,8 @@
       <recent name="$PROJECT_DIR$/plotting/matplotlib" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.textbfint10">
-    <configuration name="plot_equation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.testbfint11">
+    <configuration name="testbfint11" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="discord-python-helps" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -63,11 +60,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/plotting/matplotlib/plot equations Laura" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plotting/matplotlib/plot equations Laura/plot_equation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testbfint11.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -162,18 +159,18 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.testbfint11" />
         <item itemvalue="Python.textbfint10" />
         <item itemvalue="Python.textbfint9" />
         <item itemvalue="Python.testbfint8" />
         <item itemvalue="Python.testbfint7" />
-        <item itemvalue="Python.plot_equation" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d799d69c-62f9-465a-8992-7d72ca0417f3" name="Changes" comment="" />
+      <changelist id="1ee962b5-3656-4956-bbf8-30b12129ed68" name="Changes" comment="" />
       <created>1653997937996</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
